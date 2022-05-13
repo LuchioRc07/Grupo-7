@@ -11,9 +11,9 @@ estas plataformas.
 
 
 Sitos de referencia/ inspiración: 
-Steam,
-Epic games
-Battle.net
-Origin
-Bethesda
-Rockstar
+Steam: Es la plataforma de juegos mas popular desde ahce muchos años
+Epic games: Una de las mas novedodas y muy conocida en los nuevos jugadores.
+Battle.net: Es la plataforma propiedad de blizzard ent. que cuenta con varios de los juegos historicamente mas reconocidos de la industria
+Origin: Una app con un estilo propio mas sobrio y comedido en comparacion a las anteriores y una funcionalidad muy solida.
+Bethesda: Muy especializada en juegos de rol y por ello muy utilizada por muchicimos usuarios periodicamente.
+Rockstar: Un emblema de la industria, sus juegos son de los mas usados en sus modos Online.
