@@ -1,12 +1,16 @@
-const express = require('express');
+const express = require ('express');
+const path = require('path');
 const app = express();
 
-app.use('/static', express.static(__dirname + '/public'));
+const publicPath = path.resolve(__dirname, './public');
 
-app.listen(3100, ()=>{
-    console.log('Servidor operativo');
-});
 
-app.get('/', (req,res)=>{
-    res.sendFile(__dirname + '/views/home.html');
-});
+app.use(express.static(publicPath));
+
+app.listen(3100, () =>{
+    console.log("Servidor corriendo");
+})
+
+app.get('/', (req, res) =>{
+    res.sendFile(path.resolve('./views/home.html'))
+})
