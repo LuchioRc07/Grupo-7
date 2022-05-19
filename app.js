@@ -8,5 +8,4 @@ app.listen(3010, ()=>{
 });
 
 app.get('/', (req,res)=>{
-    res.sendFile(__dirname + '/views/index.html');
-});
+    res.sendFile(__dirname + '/views/index.html')});
