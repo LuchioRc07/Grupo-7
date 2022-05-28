@@ -1,15 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-LOGIN
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bienvenidxs a RetroGames</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="top-header">
+                <a href="/home">
+                    <img src="/images/LogoRetroGames.jpeg" width='300' alt='Logo Retro games'>
+                </a>
+                <main class="busqueda"> 
+                    <form action="#" method="GET">
+                     <div class="BJ">Buscar Juegos</div>
+                        <div class="submit"><i class="fa fa-search"></i></div>
+                        <input type="text" name="busqueda" placeholder='Buscar...'>
+                    </form>
+                </main>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/bibloteca">Biblioteca</a></li>
+                    <li><a href="/tienda">Tienda</a></li>
+                    <li><a href="/ayuda">Ayuda</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/register">Creá tu cuenta <i class="far fa-id-card"></i></a></li>
+                    <li><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a href="/productCart">Carrito <i class="fas fa-shopping-basket"></i></a></li>
+                </ul>
+            </nav>
+            <div class="burger-menu">
+                <i class="fa fa-bars burger"></i>
+            </div>
+        </header>
+        <main class="login">
+            <form action="/" method="POST">
+                <input type="text" name="user" placeholder="Nombre de usuario">
+                <input type="password" name="pass" placeholder="Contraseña">
+                <input type="submit" value="Enviar">
+            </form>
+        </main>
+        <footer>
 
-
+        </footer>
+    </body>
 </html>

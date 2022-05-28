@@ -1,13 +1,52 @@
+<!-- Registro de usuario -->
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    REGISTRO
-    
-</body>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bienvenidos a RetroGames!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="top-header">
+                <a href="/home">
+                    <img src="\images\LogoRetroGames.jpeg" width='300' alt='Logo Retro games'>
+                </a>
+                <div class="busqueda">
+                    <div class="busqueda" action="#" method="GET">
+                        <div class="BJ">Buscar Juegos</div>
+                        <div class="submit"><i class="fa fa-search"></i></div>
+                        <input type="text" name="busqueda" placeholder='Buscar...'>
+                    </div>
+                </div>
+                <div class="form" action="#" method="GET">
+                    <h1>Registrate acá</h1>
+                </div>
+        </header>
+                        
+        <main class="register">
+            <form action="/" method="POST">
+                <h4>Ingresá tu Nombre de Usuario</h4>
+                <input type="text" name="user" placeholder="Tu Nombre de usuario">
+                <h4>Ingresá tu Mail</h4>
+                <input type="email" name="email" placeholder="Tu Mail">                
+                <h4>Ingresá tu Foto</h4>
+                <input type="file" name="avatar">
+                <h4>Ingresá tu Password</h4>
+                <input type="password" name="pass" placeholder="Ingresá tu Password">
+                <input type="password" name="pass_confirm" placeholder="Confirmá tu Password">
+                <br>
+                <br>
+                <input type="submit" value="Enviar">
+                <br>
+                <br>
+            </form>
+        </main>
+        <footer>
+        </footer>
+    </body>
 </html>
