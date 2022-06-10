@@ -31,4 +31,3 @@ estas plataformas:
 
 
 Nuestro tablero de trabajo, en trello: https://trello.com/b/h5vWoeGO/grupo-7
-
