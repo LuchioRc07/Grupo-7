@@ -90,3 +90,85 @@ header h1{
     background: gray;
     margin: 20px;
 }
+
+/* Login */
+
+
+/* Register */
+
+.body-register {
+    background-color: var(--white)
+}
+
+.body-register article {
+    background-image: url(/img/fondo-register.jpg);
+    background-size: cover;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    border: solid 2px black;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    filter: blur(0.5px);
+}
+
+.frase{
+    font-size: x-large;
+    margin:auto;
+    width: 15%;
+    color: var(--cream);
+    border-radius: 5px;
+    border-style: hidden;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.reg-sec {
+     padding: 3px;
+}
+
+.retro-games {
+    background-color: var(--cream);
+    border-radius: 3px;
+}
+
+.form {
+     border-left: solid #211522 2px;
+}
+
+.form input {
+    border-radius: 3px;
+    border-style: hidden;
+}
+
+.user, .mail, .avatar, .pass, .button-register {
+    color: var(--cream);
+     padding: 8px;
+     border-radius: solid 3px;
+}
+
+.button-register input {
+     border-radius: 3px;
+     background-color: blue;
+     color: white;
+     text-align: center;
+     width: 120px;
+}
+
+.button-register input:hover {
+     background-color: green;
+     color: blue;
+}
+
+
+.terminos {
+     background-color: lightgrey;
+
+}
+
+/* Product Cart */
+
+
+/* Product Detail */
