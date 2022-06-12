@@ -3,27 +3,53 @@
 <!DOCTYPE html>
 <html>
     <%- include("./partials/head") %>
-    <body>
+    <body class="body-register">
         <%- include("./partials/header") %>
                         
-        <main class="register">
-            <form action="/" method="POST">
-                <h4>Ingresá tu Nombre de Usuario</h4>
-                <input type="text" name="user" placeholder="Tu Nombre de usuario">
-                <h4>Ingresá tu Mail</h4>
-                <input type="email" name="email" placeholder="Tu Mail">                
-                <h4>Ingresá tu Foto</h4>
-                <input type="file" name="avatar">
-                <h4>Ingresá tu Password</h4>
-                <input type="password" name="pass" placeholder="Ingresá tu Password">
-                <input type="password" name="pass_confirm" placeholder="Confirmá tu Password">
+        <article class="register">
+            <p class="frase">Bienvenido a Nuestros Mundos!</p>
+            <section class="reg-sec">
+            <div class="retro-games">
+                <h2>Retro Games</h2>
+            </div>
+            <form action="/" method="POST" class="form">
+                <div class="user">
+                    <!-- <label for="user">Ingresá tu Nombre de Usuario</label> -->
+                    <input type="text" id="user" name="user" minlength="3" placeholder="Nombre de usuario" required>
+                </div>
+
+                <div class="mail">
+                    <!-- <label for="email">Ingresá tu Mail</label> -->
+                    <input type="email" id="email" minlength="10" name="email" placeholder="Ingresá tu Email" required>           
+                </div>
+
+                <div class="avatar">
+                    <label for="avatar">Ingresá tu Foto</label>
+                    <input type="file" id="avatar" name="avatar">
+                </div>
+
+                <div class="pass">
+                    <label for="pass">Ingresá tu Password</label><br>
+                    <input type="password" id="pass"  name="pass" placeholder="Elija un Password" required>
+                    <input type="password" name="pass_confirm" placeholder="Confirmá tu Password" required>
+                </div>
+
                 <br>
                 <br>
-                <input type="submit" value="Enviar">
+
+                <div class="button-register">
+                    <input type="submit" value="Enviar">
+                </div>
+
                 <br>
                 <br>
+
             </form>
-        </main>
+
+            <p class="terminos">Términos y condiciones - Política de privacidad</p>
+
+        </section>
+        </article>
         <%- include("./partials/footer") %>
     </body>
 </html>
