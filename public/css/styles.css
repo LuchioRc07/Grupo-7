@@ -2,6 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
+
+/* Home */
+
 .top-header{
  
     flex-wrap: wrap;
@@ -78,3 +81,14 @@ header h1{
     background: gray;
     margin: 20px;
 }
+
+/* Login */
+
+
+/* Register */
+
+
+/* Product Cart */
+
+
+/* Product Detail */
