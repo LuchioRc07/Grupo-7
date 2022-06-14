@@ -92,7 +92,42 @@ header h1{
 }
 
 /* Login */
-
+.body-login {
+    background-image: url(/img/Game-wallpaper2.jpg);
+    background-size:auto;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding: 50px;
+    border: solid #9b1f1f;
+    border-radius: 3px;
+    margin-bottom: 50%;
+}
+.login .log{
+    margin: 30px;
+    border: solid #9b1f1f;
+    border-radius: 3px;
+    padding: 10px;
+}
+.log{
+    background-color: rgba(0, 0, 0, 0.771)  
+}
+.fraselog{
+    color: #9b1f1f;
+    font-size: xxx-large;
+    padding-right: 40%;
+    width: 5%;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+.retro-gamesLog {
+    background-color: #9b1f1f;
+    text-shadow: rgba(0, 0, 0, 0.567) 0.1em 0.1em 0.2em;
+    border-radius: 5px;
+}
 
 /* Register */
 
