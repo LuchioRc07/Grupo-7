@@ -91,9 +91,10 @@ header h1{
     margin: 20px;
 }
 
+
 /* Login */
 .body-login {
-    background-image: url(/img/Game-wallpaper2.jpg);
+    background-image: url(/images/Game-wallpaper2.jpg);
     background-size:auto;
 }
 .login{
@@ -128,6 +129,11 @@ header h1{
     text-shadow: rgba(0, 0, 0, 0.567) 0.1em 0.1em 0.2em;
     border-radius: 5px;
 }
+footer{
+    background-color: rgba(22, 18, 39, 0.473);
+
+    text-align: center;
+}
 
 /* Register */
 
@@ -136,7 +142,7 @@ header h1{
 }
 
 .body-register article {
-    background-image: url(/img/fondo-register.jpg);
+    background-image: url(/images/fondo-register.jpg);
     background-size: cover;
 }
 
