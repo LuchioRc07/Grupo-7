@@ -167,6 +167,7 @@ footer{
     margin: auto;
     filter: blur(0.5px);
     
+    
 }
 
 .frase{
@@ -222,6 +223,20 @@ footer{
 
 }
 
+footer {
+    margin-top: 50%;
+}
+
+.Whattsapp {
+    display: flex;
+    position: fixed;
+    top: 800px;
+    right: 25px;
+    width: 100px;
+    border-radius:2px;
+    border-color: greenyellow;
+    
+}
 /* Product Cart */
 
 
@@ -229,9 +244,8 @@ footer{
 
 
 /* Media Quares */
-@media (min-width: 361px){
-   
-       
+@media (min-width: 361px) {
+
 }
 
 @media (min-width: 769px){
