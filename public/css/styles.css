@@ -14,6 +14,11 @@
  --violet:#613659;
 }
 
+.bodys {
+    background-image: url(/images/fondo-home.jpg);
+    background-size: cover;
+}
+
 .top-header{
  
     flex-wrap: wrap;
@@ -107,6 +112,8 @@ header h1{
     border: solid #9b1f1f;
     border-radius: 3px;
     margin-bottom: 50%;
+    background-image: url(/images/Game-wallpaper2.jpg);
+    background-size: cover;
 }
 .login .log{
     margin: 30px;
@@ -138,11 +145,12 @@ footer{
 /* Register */
 
 .body-register {
-    background-color: var(--white)
+    background-image: url(/images/Game-wallpaper2.jpg);
+    
 }
 
 .body-register article {
-    background-image: url(/images/fondo-register.jpg);
+    background-image: url(/images/Game-wallpaper2.jpg);
     background-size: cover;
 }
 
@@ -154,6 +162,7 @@ footer{
     width: 80%;
     margin: auto;
     filter: blur(0.5px);
+    
 }
 
 .frase{
