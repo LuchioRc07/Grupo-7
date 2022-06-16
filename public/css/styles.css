@@ -99,7 +99,13 @@ header h1{
     background: gray;
     margin: 20px;
 }
+footer {
+    margin-top: 50%;
+}
+.HF{
+    color:#FFF2FF;
 
+}
 
 /* Login */
 .body-login {
@@ -139,6 +145,14 @@ header h1{
     background-color: #9b1f1f;
     text-shadow: rgba(0, 0, 0, 0.567) 0.1em 0.1em 0.2em;
     border-radius: 5px;
+
+}
+.sDestacados{
+    color:#FFF2FF;
+}
+.sOfertas{
+    color: #FFF2FF;
+    left: auto;
 }
 footer{
     background-color: rgba(22, 18, 39, 0.473);
@@ -223,9 +237,7 @@ footer{
 
 }
 
-footer {
-    margin-top: 50%;
-}
+
 
 .Whattsapp {
     display: flex;
@@ -244,6 +256,7 @@ footer {
 
 
 /* Media Quares */
+/*Phone*/
 @media (min-width: 361px) {
 
 }
