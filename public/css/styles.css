@@ -38,9 +38,8 @@
     margin: 20px;
     margin-top: 20px;
 }
+
 /*  HEADER  */
-
-
 .top-header{
 
     background: #9b1f1f;       
@@ -59,9 +58,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.top-header .tienda{
-    
-}
 .top-header .Biblio{
     float:left;
     font-size: 17px;
