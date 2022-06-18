@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <%- include("./partials/head") %>
+    <body class="body-register">
+        <%- include("./partials/header") %>
+                        
+        <article class="register">
+            <p class="frase">Bienvenido a Nuestros Mundos!</p>
+            <section class="reg-sec">
+            <div class="retro-games">
+                <h2>Editing User <%= userToEdit.user %></h2>
+            </div>
+            <form action="/users/id:/actualizar?_method=PUT" method="POST" class="form">
+                <div class="user">
+                    <!-- <label for="user">Ingresá tu Nombre de Usuario</label> -->
+                    <input type="text" id="user" value="<%= userToEdit.user %>" name="user" minlength="3" placeholder="Nombre de usuario" required>
+                </div>
+
+                <br>
+                <br>
+
+                <div class="button-register">
+                    <input type="submit" value="Editar">
+                </div>
+
+                <br>
+                <br>
+
+            </form>
+
+            <p class="terminos">Términos y condiciones - Política de privacidad</p>
+
+        </section>
+        </article>
+        <%- include("./partials/footer") %>
+    </body>
+</html>

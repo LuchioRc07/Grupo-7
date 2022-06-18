@@ -232,10 +232,21 @@ footer {
     position: fixed;
     top: 800px;
     right: 25px;
-    width: 100px;
+    width: 120px;
+    height: 200px;
     border-radius:2px;
     border-color: greenyellow;
-    
+    color:greenyellow ;
+}
+
+.error-404 {
+    margin: auto;
+    background-color: red;
+    text-align: center;
+    margin-top: 25%;
+}
+.error-404:hover{
+    color: white;
 }
 /* Product Cart */
 
