@@ -2,8 +2,6 @@
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(/images/fondo-home.jpg);
-   background-attachment: fixed;
 }
 
 :root {
@@ -17,13 +15,24 @@
 }
 
 .IP:hover {
-    color: red;
+    color: white;
+    background-color: wheat;
+}
+/* //home */
+
+.rotate {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.bodys {
+
+body {
    /*background-image: url(/images/fondo-home.jpg);
    background-size: cover;*/
+   background-image: url(/images/fondo-home.jpg);
+    background-attachment: fixed;
 }
+
 
 .top-header{
  
@@ -74,9 +83,10 @@
     color: black;
     font-family: Arial, Helvetica, sans-serif;
 }
-.busqueda{
-    text-align: center
-}
+/* .busqueda{
+    text-align: center;
+    flex-wrap: nowrap;
+} */
 .fa{
     font-size: 17px ;
 }
@@ -98,10 +108,24 @@
     margin: 20px;
 }
 .cuadrado{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     background: #9b1f1f; 
     height: 100%;
     width: 100%;
     margin: 20px;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.entry {
+    flex-wrap: wrap;
+}
+
+.submit {
+    width: 30%;
+    justify-content: center;
 }
 
 footer {
@@ -205,7 +229,7 @@ footer{
     font-size: x-large;
     margin:auto;
     width: 15%;
-    color: var(--cream);
+    color: #9b1f1f;
     border-radius: 5px;
     border-style: hidden;
     text-shadow: black 0.1em 0.1em 0.2em;
@@ -216,7 +240,7 @@ footer{
 }
 
 .retro-games {
-    background-color: var(--cream);
+    background-color: #9b1f1f;
     border-radius: 3px;
 }
 
@@ -226,7 +250,7 @@ footer{
 
 .form input {
     border-radius: 3px;
-    border-style: hidden;
+    border-style:outset;
 }
 
 .user, .mail, .avatar, .pass, .button-register {
@@ -244,13 +268,13 @@ footer{
 }
 
 .button-register input:hover {
-     background-color: green;
+     background-color: brown;
      color: blue;
 }
 
 
 .terminos {
-     background-color: lightgrey;
+     background-color: #9b1f1f;
 
 }
 
