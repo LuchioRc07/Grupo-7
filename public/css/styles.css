@@ -290,6 +290,7 @@ footer{
     border-radius:2px;
     border-color: greenyellow;
     color:greenyellow ;
+    font-size: 80px;
 }
 
 .error-404 {
