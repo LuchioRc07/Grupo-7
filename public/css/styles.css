@@ -2,6 +2,8 @@
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url(/images/fondo-home.jpg);
+   background-attachment: fixed;
 }
 
 :root {
@@ -19,8 +21,8 @@
 }
 
 .bodys {
-    background-image: url(/images/fondo-home.jpg);
-    background-size: cover;
+   /*background-image: url(/images/fondo-home.jpg);
+   background-size: cover;*/
 }
 
 .top-header{
@@ -33,24 +35,31 @@
 .logo-home .img {
     
     width: 75px;
-    border: solid black;
     margin: 20px;
     margin-top: 20px;
-    
-
 }
-header h1{
-    background: gray;
+/*  HEADER  */
+
+
+.top-header{
+
+    background: #9b1f1f;       
     font-size: 50px;
     border: black;
     margin: 10px;
 
 }
-.top-header .tienda{
+
+.top-header .cuadrado a{
+    background: #9b1f1f; 
     float:left;
     font-size: 17px;
 	margin: 20px;
     color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.top-header .tienda{
     
 }
 .top-header .Biblio{
@@ -71,7 +80,6 @@ header h1{
 }
 .busqueda{
     text-align: center
-
 }
 .fa{
     font-size: 17px ;
@@ -94,17 +102,24 @@ header h1{
     margin: 20px;
 }
 .cuadrado{
+    background: #9b1f1f; 
     height: 100%;
     width: 100%;
-    background: gray;
     margin: 20px;
 }
 
+footer {
+    margin-top: 50%;
+}
+.HF{
+    color:#FFF2FF;
+
+}
 
 /* Login */
-.body-login {
-    background-image: url(/images/Game-wallpaper2.jpg);
-    background-size:auto;
+.login h2 {
+    color: #9b1f1f;
+    
 }
 .login{
     display: flex;
@@ -116,15 +131,27 @@ header h1{
     border: solid #9b1f1f;
     border-radius: 3px;
     margin-bottom: 50%;
-    background-image: url(/images/Game-wallpaper2.jpg);
-    background-size: cover;
 }
 .login .log{
     margin: 30px;
     border: solid #9b1f1f;
     border-radius: 3px;
     padding: 10px;
+    background:rgba(46, 2, 2, 0.567)
 }
+.form .input{
+    background:rgba(46, 2, 2, 0.567)
+}
+
+.form input{
+background: rgba(46, 2, 2, 0.567);
+color: #bb0116;
+}
+.form input .text{
+    background: rgba(46, 2, 2, 0.567);
+    color: #bb0116;
+    }
+
 .log{
     background-color: rgba(0, 0, 0, 0.771)  
 }
@@ -139,6 +166,14 @@ header h1{
     background-color: #9b1f1f;
     text-shadow: rgba(0, 0, 0, 0.567) 0.1em 0.1em 0.2em;
     border-radius: 5px;
+
+}
+.sDestacados{
+    color:#FFF2FF;
+}
+.sOfertas{
+    color: #FFF2FF;
+    left: auto;
 }
 footer{
     background-color: rgba(22, 18, 39, 0.473);
@@ -149,13 +184,13 @@ footer{
 /* Register */
 
 .body-register {
-    background-image: url(/images/Game-wallpaper2.jpg);
+   /* background-image: url(/images/Game-wallpaper2.jpg);*/
     
 }
 
 .body-register article {
-    background-image: url(/images/Game-wallpaper2.jpg);
-    background-size: cover;
+    /*background-image: url(/images/Game-wallpaper2.jpg);
+    background-size: cover;*/
 }
 
 .register {
@@ -223,9 +258,7 @@ footer{
 
 }
 
-footer {
-    margin-top: 50%;
-}
+
 
 .Whattsapp {
     display: flex;
@@ -255,6 +288,7 @@ footer {
 
 
 /* Media Quares */
+/*Phone*/
 @media (min-width: 361px) {
 
 }
