@@ -2,6 +2,8 @@
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url(/images/fondo-home.jpg);
+   background-attachment: fixed;
 }
 
 :root {
@@ -15,24 +17,13 @@
 }
 
 .IP:hover {
-    color: white;
-    background-color: wheat;
-}
-/* //home */
-
-.rotate {
-    display: flex;
-    flex-wrap: wrap;
+    color: red;
 }
 
-
-body {
+/*.bodys {
    /*background-image: url(/images/fondo-home.jpg);
-   background-size: cover;*/
-   background-image: url(/images/fondo-home.jpg);
-    background-attachment: fixed;
-}
-
+   background-size: cover;
+}*/
 
 .top-header{
  
@@ -83,10 +74,9 @@ body {
     color: black;
     font-family: Arial, Helvetica, sans-serif;
 }
-/* .busqueda{
-    text-align: center;
-    flex-wrap: nowrap;
-} */
+.busqueda{
+    text-align: center
+}
 .fa{
     font-size: 17px ;
 }
@@ -108,24 +98,10 @@ body {
     margin: 20px;
 }
 .cuadrado{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
     background: #9b1f1f; 
     height: 100%;
     width: 100%;
     margin: 20px;
-    flex-flow: wrap;
-    justify-content: space-between;
-}
-
-.entry {
-    flex-wrap: wrap;
-}
-
-.submit {
-    width: 30%;
-    justify-content: center;
 }
 
 footer {
@@ -203,15 +179,15 @@ footer{
 
 /* Register */
 
-.body-register {
-   /* background-image: url(/images/Game-wallpaper2.jpg);*/
+/*.body-register {
+   /* background-image: url(/images/Game-wallpaper2.jpg);
     
-}
+}*/
 
-.body-register article {
+/*.body-register article {
     /*background-image: url(/images/Game-wallpaper2.jpg);
-    background-size: cover;*/
-}
+    background-size: cover;
+}*/
 
 .register {
     display: flex;
@@ -229,7 +205,7 @@ footer{
     font-size: x-large;
     margin:auto;
     width: 15%;
-    color: #9b1f1f;
+    color: var(--cream);
     border-radius: 5px;
     border-style: hidden;
     text-shadow: black 0.1em 0.1em 0.2em;
@@ -240,7 +216,7 @@ footer{
 }
 
 .retro-games {
-    background-color: #9b1f1f;
+    background-color: var(--cream);
     border-radius: 3px;
 }
 
@@ -250,7 +226,7 @@ footer{
 
 .form input {
     border-radius: 3px;
-    border-style:outset;
+    border-style: hidden;
 }
 
 .user, .mail, .avatar, .pass, .button-register {
@@ -268,13 +244,13 @@ footer{
 }
 
 .button-register input:hover {
-     background-color: brown;
+     background-color: green;
      color: blue;
 }
 
 
 .terminos {
-     background-color: #9b1f1f;
+     background-color: lightgrey;
 
 }
 
@@ -290,7 +266,6 @@ footer{
     border-radius:2px;
     border-color: greenyellow;
     color:greenyellow ;
-    font-size: 80px;
 }
 
 .error-404 {
