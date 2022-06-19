@@ -20,10 +20,10 @@
     color: red;
 }
 
-/*.bodys {
-   /*background-image: url(/images/fondo-home.jpg);
+.bodys {
+   background-image: url(/images/fondo-home.jpg);
    background-size: cover;
-}*/
+}
 
 .top-header{
  
@@ -179,15 +179,15 @@ footer{
 
 /* Register */
 
-/*.body-register {
-   /* background-image: url(/images/Game-wallpaper2.jpg);
+.body-register {
+    background-image: url(/images/Game-wallpaper2.jpg);
     
-}*/
+}
 
-/*.body-register article {
-    /*background-image: url(/images/Game-wallpaper2.jpg);
+.body-register article {
+    background-image: url(/images/Game-wallpaper2.jpg);
     background-size: cover;
-}*/
+}
 
 .register {
     display: flex;
