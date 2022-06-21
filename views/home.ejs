@@ -2,39 +2,53 @@
 <html lang="en">
 <%- include("./partials/head") %>
 <body class="bodys">
-    
     <%- include("./partials/header") %>
-    <main>
-            <section class="sDestacados">Destacados Y Recomendados
-                <div class="rotate">Titulos
-                    <div>
-                        <article><img class="img-dest" width="340" height="180" src="/images/pvz 1.jpg" alt="Juego Pvz"/></article>
-                    </div>
-                    <div>
-                        <article><img class="img-dest" width="340" height="180" src="/images/Rainbow six siege.png" alt="Juego R6"/></article>
-                    </div>
-                    <div>
-                        <article><img class="img-dest" width="340" height="180" src="/images/scum.png" alt="Juego Scum"/></article>
-                    </div>
-                    <div>
-                        <article><img class="img-dest" width="340" height="180" src="/images/The hunter.png" alt="Juego The hunter"/></article>
-                    </div>
-                </div>
+    <main class="main">
+        <section class="sDestacados">
+          <div class="rotate">
+            <h3>Destacados Y Recomendados</h3>
+               <p>Titulos</p></div>
+                   <article class="article">
+                        <img class="img-dest" width="340" height="180" src="/images/pvz 1.jpg">
+                        <p class="price">$$$</p>                   
+                        <h4 class="description">Pvz</h4>
+                   </article>
+                   <article class="article">
+                        <img class="img-dest" width="340" height="180" src="/images/Rainbow six siege.png">
+                        <p class="price">$$$</p>                   
+                        <h4 class="description">R6</h4>
+                    </article>
+                    <article class="article">
+                        <img class="img-dest" width="340" height="180" src="/images/scum.png">
+                        <p class="price">$$$</p>                   
+                        <h4 class="description">Scum</h4>
+                    </article>
+                    <article class="article">
+                        <img class="img-dest" width="340" height="180" src="/images/The hunter.png" alt="Juego The hunter"/>       
+                        <p class="price">$$$</p>                   
+                        <h4 class="description">The hunter</h4>
+                    </article>
             </section>
-            <section>
-                <div class="sOfertas">Ofertas especiales</div>
-                <div>
-                <article><img class="img-esp" width="340" height="180" src="/images/ark.png" alt="Juego Ark"/></article>
-            </div>
-            <div>
-                <article><img class="img-esp" width="340" height="180" src="/images/elder ring.png" alt="Juego Elder"/></div></article>
-            </div>
-            <div>
-                <article><img class="img-esp" width="340" height="180" src="/images/fifa 22.jpeg" alt="Juego Fifa 22"/></article>
-            </div>
-            <div>
-                <article><img class="img-esp" width="340" height="180" src="/images/nioh 1 y 2.png" alt="Juego Nioh 1 y 2"/></article>
-            </div>
+        <section class="sOfertas">   
+            <div class="rotate" >
+                <h3>Ofertas especiales</h3>
+                <p>Titulos</p></div>
+                     <article class="article"><img class="img-esp" width="340" height="180" src="/images/ark.png">
+                       <p class="price">$$$</p>                   
+                       <h4 class="description">Ark Survival Envolved</h4>
+                     </article>
+                     <article class="article"><img class="img-esp" width="340" height="180" src="/images/elder ring.png">
+                       <p class="price">$$$</p>                   
+                       <h4 class="description">Elder Ring</h4>
+                     </article>
+                     <article class="article"><img class="img-esp" width="340" height="180" src="/images/fifa 22.jpeg">
+                       <p class="price">$$$</p>                 
+                       <h4 class="description">Fifa 22</h4>
+                    </article> 
+                     <article class="article"><img class="img-esp" width="340" height="180" src="/images/nioh 1 y 2.png">
+                       <p class="price">$$$</p>                   
+                       <h4 class="description">Nioh 1 y 2</h4>
+                     </article> 
         </section>
     </main>
     <%- include("./partials/footer") %>
