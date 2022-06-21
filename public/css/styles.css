@@ -1,9 +1,10 @@
 * {  
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(/images/fondo-home.jpg);
-   background-attachment: fixed;
+/*    background-image: url(/images/fondo-home.jpg);
+   background-attachment: fixed;*/
 }
 
 :root {
@@ -21,94 +22,56 @@
 }
 
 .bodys {
-   /*background-image: url(/images/fondo-home.jpg);
-   background-size: cover;*/
+   background-image: url(/images/fondo-home.jpg);
+   background-size: cover;
 }
-
-.top-header{
- 
-    flex-wrap: wrap;
-    display: flex
-
-
-}
-.logo-home .img {
-    
-    width: 75px;
-    margin: 20px;
-    margin-top: 20px;
-}
-
 /*  HEADER  */
+.header{
+    background: #8d0000d1;
+ 
+}
 .top-header{
-
-    background: #9b1f1f;       
-    font-size: 50px;
-    border: black;
-    margin: 10px;
+    display: flex;
+    justify-content: space-between;
 
 }
-
-.top-header .cuadrado a{
-    background: #9b1f1f; 
-    float:left;
-    font-size: 17px;
-	margin: 20px;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
+.navegation a{
+    color: #000000;
+    text-decoration: none;
 }
-
-.top-header .Biblio{
-    float:left;
-    font-size: 17px;
-	margin: 20px;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
+.navegation ul{
 
 }
-.top-header .Perfil{
-    float:left;
-    font-size: 17px;
-    margin-top: 20px;
-	margin-left: 20px;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
+.navegation ul li{
+    display: inline-block;
+    
+}
+.navegation ul li a{
+    display: block;
+    margin: 30px 15px;
+    
+    
+}
+.navegation ul li:hover{
+    background-color: darkblue;
+    transition: all 0.5s linear;
 }
 .busqueda{
-    text-align: center
-}
-.fa{
-    font-size: 17px ;
-}
-.IP{
-    float:right;
-    font-size: 17px;
-    margin-top: 20px;
-	margin-left: 20px;
-    margin-right: 20px;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.cart{
-    float:right;
-    font-size: 17px;
-    margin-top: 20px;
-	margin-left: 20px;
-    margin-right: 20px;
-    margin: 20px;
-}
-.cuadrado{
-    background: #9b1f1f; 
-    height: 100%;
-    width: 100%;
-    margin: 20px;
+    padding: 25px 5px;
 }
 
-footer {
-    margin-top: 50%;
+/* Footer */
+
+.footer {
+    background: #8d0000d1;
+    margin-top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 5%;
 }
 .HF{
-    color:#FFF2FF;
+    color: black
 
 }
 
@@ -117,16 +80,23 @@ footer {
     color: #9b1f1f;
     
 }
+.body-login{
+   background-image: url(/images/fondo-home.jpg);
+   background-attachment: fixed;
+}
 .login{
+
+    background: radial-gradient(#97171786, #b4696936);
     display: flex;
     justify-content: center;
     text-align: center;
-    width: 80%;
-    margin: auto;
-    padding: 50px;
+    margin: 30px 20px;
+    padding: 20px;
     border: solid #9b1f1f;
-    border-radius: 3px;
-    margin-bottom: 50%;
+ 
+}
+.reg-sec{
+    width: 70%;
 }
 .login .log{
     margin: 30px;
@@ -164,24 +134,28 @@ color: #bb0116;
     border-radius: 5px;
 
 }
+/* HOME */
+.main p{
+
+}
 .sDestacados{
     color:#FFF2FF;
 }
 .sOfertas{
     color: #FFF2FF;
-    left: auto;
+    
 }
-footer{
-    background-color: rgba(22, 18, 39, 0.473);
+.rotate{
+   
 
-    text-align: center;
 }
+
 
 /* Register */
 
 .body-register {
-   /* background-image: url(/images/Game-wallpaper2.jpg);*/
-    
+    background-image: url(/images/fondo-home.jpg);
+    background-attachment: fixed;
 }
 
 .body-register article {
@@ -190,15 +164,15 @@ footer{
 }
 
 .register {
+    background: radial-gradient(#97171786, #b4696936);
     display: flex;
+    margin: 20px auto;
     justify-content: center;
-    border: solid 2px black;
     text-align: center;
-    width: 80%;
-    margin: auto;
-    filter: blur(0.5px);
-    
-    
+
+    padding: 20px;
+    border: solid #9b1f1f;
+    width: 70%;
 }
 
 .frase{
@@ -211,9 +185,6 @@ footer{
     text-shadow: black 0.1em 0.1em 0.2em;
 }
 
-.reg-sec {
-     padding: 3px;
-}
 
 .retro-games {
     background-color: var(--cream);
@@ -255,22 +226,20 @@ footer{
 }
 
 
-
+.WHAT{
+    font-size: 20px;
+}
 .Whattsapp {
     display: flex;
-    position: fixed;
-    top: 800px;
-    right: 25px;
-    width: 120px;
-    height: 200px;
     border-radius:2px;
     border-color: greenyellow;
     color:greenyellow ;
+    display: inline-block;
 }
 
 .error-404 {
     margin: auto;
-    background-color: red;
+    background-color: rgba(150, 0, 0, 0.812);
     text-align: center;
     margin-top: 25%;
 }
