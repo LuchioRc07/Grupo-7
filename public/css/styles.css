@@ -39,9 +39,7 @@
     color: #000000;
     text-decoration: none;
 }
-.navegation ul{
 
-}
 .navegation ul li{
     display: inline-block;
     
@@ -172,11 +170,6 @@ color: #bb0116;
 .body-register {
     background-image: url(/images/fondo-home.jpg);
     background-attachment: fixed;
-}
-
-.body-register article {
-    /*background-image: url(/images/Game-wallpaper2.jpg);
-    background-size: cover;*/
 }
 
 .register {
