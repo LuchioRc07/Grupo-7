@@ -135,21 +135,37 @@ color: #bb0116;
 
 }
 /* HOME */
-.main p{
-
-}
-.sDestacados{
+.rotate{
     color:#FFF2FF;
+    margin: 10px;
 }
-.sOfertas{
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sDestacados p{
+    color: #FFF2FF;   
+}
+.sDestacados h4{
     color: #FFF2FF;
     
 }
-.rotate{
-   
-
+.sDestacados .article description:hover{
+    text-decoration: underline;
 }
 
+.sOfertas p{
+    color: #FFF2FF;
+}
+.sOfertas .description{
+    color: #FFF2FF;
+}
+.article{
+    width: 100%;
+}
 
 /* Register */
 
