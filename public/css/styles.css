@@ -3,9 +3,10 @@
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    /* max-width: 1200px; */
-/*    background-image: url(/images/fondo-home.jpg);
-   background-attachment: fixed;*/
+
+   background-image: url(/images/fondo-home.jpg);
+   background-attachment: fixed;
+
 }
 
 :root {
@@ -159,18 +160,22 @@ color: #bb0116;
     width: 100%;
     display: flex;
     justify-content: space-between;
+
     flex-direction: column;
     margin: auto;
     padding: 50px 15px;
+
 }
 
 .sDestacados p{
     color: #FFF2FF;  
+
     
 
 }
 .sDestacados h4{
     color: #FFF2FF;
+
 
     
 }
@@ -197,11 +202,6 @@ color: #bb0116;
 }
 
 .body-register article {
-    /* background-image: url(/images/Game-wallpaper2.jpg); */
-    /* background-size: cover; */
-
-    /* background-image: url(/images/fondo-home.jpg);
-    background-attachment: fixed; */
 
 }
 
