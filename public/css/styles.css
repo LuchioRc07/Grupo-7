@@ -191,8 +191,17 @@ color: #bb0116;
 /* Register */
 
 .body-register {
+    background-image: url(/images/Game-wallpaper2.jpg);
+    
+}
+
+.body-register article {
+    background-image: url(/images/Game-wallpaper2.jpg);
+    background-size: cover;
+
     background-image: url(/images/fondo-home.jpg);
     background-attachment: fixed;
+
 }
 
 .register {
