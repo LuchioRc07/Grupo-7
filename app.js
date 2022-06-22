@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
 const path = require("path");
-const router = require('./routes/main');
-// const routers = require("./routes/users");
 const methodOverride = require("method-override");
 
 
@@ -38,7 +36,7 @@ app.use(methodOverride("_method"));
       
 
 app.listen(3010, ()=>{
-    console.log('Servidor Grupal corriendo');
+    console.log('Servidor Grupal corriendo en el puerto 3010');
 });
 
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Carrito', image: ''}) %>
+
+<body class="body-cart">
+   <!-- Header -->
+   <%- include('partials/header') %>
+   <!-- /Header -->
+
+   <div class="container products-wrapper">
+      <% if(carrito.length != 0){ %>
+      <div class="row">
+         <div class="col-12">
+            <h1 class="products-title">Carrito de compras</h1>
+         </div>
+      </div>
+      <div class="product-detail">
+         <div class="row">
+            <div class="col-12 col-lg-8 pt-4">
+               <% carrito.forEach(item => { %>
+               
+               <div class="col-12 mt-3">
+                  <section class="row">
+                     <div class="cart-image">
+                        <img src="/images/products/<%=item.image%>" alt="product image" class="product-detail-img">
+                     </div>
+                     <section class="col-6">
+                        <p class = 'cart-item-name'><%= item.name %>
+                        <br>
+                        <br>
+                        Precio Final: 
+                        <b>$<%=item.price*item.discount/100%></b>
+                     </p>
+                     </section>
+                     <section class="col-3">
+                        <form action="/users/deleteFromCart/<%=item.id%>" method="POST" class="mt-4">
+                           <input type="hidden" name="itemId" value="<%= item.id %>">
+                           <button type="submit" class="action-button delete">ELIMINAR</button>
+                        </form>
+                     </section>
+                  </section>
+               </div>
+               <hr>
+               <% }); %>
+
+
+            </div>
+            <div class="col-12 col-lg-4">
+               <article class="product-detail-info">
+
+                  <button style="display: inline-block; width: 100%;" type="submit" class="mt-4 buy-now-button">COMPRAR</button>
+
+               </article>
+            </div>
+         </div>
+      </div>
+      <% } else { %>
+      <div class="col-12">
+         <h2 class="products-title" style="padding: 100px 0; color: tomato;">Todavia no agregaste productos al carrito</h2>
+      </div>
+      <% } %>
+   </div>
+
+   <!-- footer -->
+   <%- include('partials/footer') %>
+   <!-- /footer -->
+</body>
+
+</html>
