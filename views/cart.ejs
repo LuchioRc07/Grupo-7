@@ -22,9 +22,15 @@
                
                <div class="col-12 mt-3">
                   <section class="row">
-                     <div class="cart-image">
-                        <img src="/images/products/<%=item.image%>" alt="product image" class="product-detail-img">
+                    <li class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="img-responsive img-thumbnail ratio-4-3" style="background-image:url(/images/<%=item.image%>)"></div>
+                      </li> 
+                   <!--
+                    <div class="cart-image">
+                        <img src="/images/<%=item.image%>" alt="product image" class="product-detail-img">
                      </div>
+                   -->
+                    
                      <section class="col-6">
                         <p class = 'cart-item-name'><%= item.name %>
                         <br>

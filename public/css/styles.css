@@ -166,13 +166,32 @@
     box-shadow: 0 0 5px var(--green);
   }
     .cart-image {
-    max-width: 20%;
-    max-height: 20%;
+    max-width: 10ch;
+    max-height: 2cm;
   }
   
   .cart-item-name{
     font-size: 2em;
     
+  }
+
+  /* CSS used here will be applied after bootstrap.css */
+ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .ratio-4-3{
+    width:100%;
+    position:relative;
+    background:url() 50% 50% no-repeat;
+    background-size:cover;
+    background-clip:content-box;
+  }
+  .ratio-4-3:before{
+      display:block;
+      content:"";
+      padding-top:75%;
   }
 
   /* -- FIN CARRITO -- */
