@@ -141,14 +141,17 @@ color: #bb0116;
 .main {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
+    margin: auto;
 }
 
 .sDestacados p{
-    color: #FFF2FF;   
+    color: #FFF2FF;  
+    width: 45%; 
 }
 .sDestacados h4{
     color: #FFF2FF;
+    width: 45%; 
     
 }
 .sDestacados .article description:hover{
