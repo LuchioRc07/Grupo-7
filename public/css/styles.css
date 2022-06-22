@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    /* max-width: 1200px; */
 /*    background-image: url(/images/fondo-home.jpg);
    background-attachment: fixed;*/
 }
@@ -28,6 +29,8 @@
 /*  HEADER  */
 .header{
     background: #8d0000d1;
+    width: 100%;
+    flex-wrap: nowrap;
  
 }
 .top-header{
@@ -35,13 +38,22 @@
     justify-content: space-between;
 
 }
+
+.navegation, .navegation, .busqueda {
+    flex-flow: 25%;
+    flex-wrap: nowrap;
+
+}
+
 .navegation a{
     color: #000000;
     text-decoration: none;
+
 }
 
 .navegation ul li{
     display: inline-block;
+
     
 }
 .navegation ul li a{
@@ -55,11 +67,13 @@
 }
 .busqueda{
     padding: 25px 5px;
+    
 }
 
 /* Footer */
 
 .footer {
+    width: 100%;
     background: #8d0000d1;
     margin-top: 20%;
     display: flex;
@@ -85,11 +99,12 @@
 
     background: radial-gradient(#97171786, #b4696936);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     margin: 30px 20px;
     padding: 20px;
     border: solid #9b1f1f;
+    width: 100%;
  
 }
 .reg-sec{
@@ -119,11 +134,12 @@ color: #bb0116;
     background-color: rgba(0, 0, 0, 0.771)  
 }
 .fraselog{
+    align-self: center;
     color: #9b1f1f;
-    font-size: xxx-large;
-    padding-right: 40%;
-    width: 5%;
+    font-size: 25px;
+
     text-shadow: black 0.1em 0.1em 0.2em;
+    
 }
 .retro-gamesLog {
     background-color: #9b1f1f;
@@ -135,22 +151,27 @@ color: #bb0116;
 .rotate{
     color:#FFF2FF;
     margin: 10px;
+    image-rendering: optimizeQuality;
+    
 }
 
 .main {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    flex-direction: column;
     margin: auto;
+    padding: 50px 15px;
 }
 
 .sDestacados p{
     color: #FFF2FF;  
-    width: 45%; 
+    
+
 }
 .sDestacados h4{
     color: #FFF2FF;
-    width: 45%; 
+
     
 }
 .sDestacados .article description:hover{
@@ -164,7 +185,7 @@ color: #bb0116;
     color: #FFF2FF;
 }
 .article{
-    width: 100%;
+    /* width: 100%; */
 }
 
 /* Register */
@@ -177,20 +198,20 @@ color: #bb0116;
 .register {
     background: radial-gradient(#97171786, #b4696936);
     display: flex;
-    margin: 20px auto;
+    margin: 15px 0px 15px 0px;
     justify-content: center;
     text-align: center;
 
-    padding: 20px;
+    padding-top: 30px;
     border: solid #9b1f1f;
-    width: 70%;
+    width: 100%;
 }
 
 .frase{
     font-size: x-large;
     margin:auto;
     width: 15%;
-    color: var(--cream);
+    color: red;
     border-radius: 5px;
     border-style: hidden;
     text-shadow: black 0.1em 0.1em 0.2em;
@@ -198,7 +219,7 @@ color: #bb0116;
 
 
 .retro-games {
-    background-color: var(--cream);
+    background-color: red;
     border-radius: 3px;
 }
 
@@ -232,7 +253,7 @@ color: #bb0116;
 
 
 .terminos {
-     background-color: lightgrey;
+     background-color: red;
 
 }
 
@@ -271,4 +292,8 @@ color: #bb0116;
 
 @media (min-width: 769px){
     
+}
+
+@media (min-width: 1200px) {
+   
 }
