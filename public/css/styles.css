@@ -34,7 +34,7 @@
 .navegation ul li{
     display: inline-block;
     
-}
+}   
 .navegation ul li a{
     display: block;
     margin: 30px 15px;
@@ -68,10 +68,6 @@
 
 /* ---Login--- */
 
-.login h2 {
-    color: #9b1f1f;
-    
-}
 .body-login{
    background-image: url(/images/fondo-home.jpg);
    background-attachment: fixed;
@@ -189,15 +185,18 @@ color: #bb0116;
     font-size: x-large;
     margin:auto;
     width: 15%;
-    color: var(--cream);
     border-radius: 5px;
     border-style: hidden;
     text-shadow: black 0.1em 0.1em 0.2em;
+    color: #9b1f1f;
+    padding-right: 40%;
 }
 
 .retro-games {
-    background-color: var(--cream);
-    border-radius: 3px;
+    background-color: #9b1f1f;
+    text-shadow: rgb(0 0 0 / 57%) 0.1em 0.1em 0.2em;
+    border-radius: 5px;
+
 }
 
 .form {
@@ -256,9 +255,22 @@ color: #bb0116;
 
 
 /* ---Product Cart--- */
+.body-cart{
+    background-image: url(/images/fondo-home.jpg);
+    background-attachment: fixed;
+}
 
+.body-cart .product-detail{
+    color: #9b1f1f;
+    padding-right: 40%;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
 
-
+.body-cart h1{
+    color: #9b1f1f;
+    padding-right: 40%;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
 
 /* ---Product Detail--- */
 
