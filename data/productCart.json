@@ -1,1 +1,9 @@
-[{"id":0,"name":"FIFA 22","price":72990,"discount":25,"category":"in-sale","description":"","image":"fifa22.png"},{"id":1,"name":"NIOH 1 y 2","description":"","price":47900,"discount":10,"image":"nioh1y2.png"},{"id":2,"name":"PVZ 1","description":"","price":53000,"discount":20,"image":"pvz1.jpg"},{"id":3,"name":"Rainbow Six Siege","description":"","price":20990,"discount":12,"image":"Rainbowsixsiege.png"},{"id":4,"name":"Scum","description":"","price":36700,"discount":5,"image":"scum.png"},{"id":5,"name":"Tekken 7","description":"","price":148000,"discount":2,"image":"tekken7.png"},{"id":6,"name":"The Hunter","description":"","price":11390,"discount":0,"image":"Thehunter.png"}]
+[{"id":1,"name":"ARK","price":10500,"discount":50,"category":"visited","description":"","image":"ark.png"},
+    {"id":2,"name":"Elder Ring","price":5000,"discount":3,"category":"in-sale","description":"","image":"elderring.png"},
+    {"id":3,"name":"FIFA 22","price":72990,"discount":25,"category":"in-sale","description":"","image":"fifa22.png"},
+    {"id":4,"name":"NIOH 1 y 2","description":"","price":47900,"discount":10,"image":"nioh1y2.png"},
+    {"id":5,"name":"PVZ 1","description":"","price":5300,"discount":20,"image":"pvz1.jpg"},
+    {"id":6,"name":"Rainbow Six Siege","description": "","price":20990,"discount":12,"image":"Rainbowsixsiege.png"},
+    {"id":7,"name":"Scum","description":"","price":36700,"discount":5,"image":"scum.png"},
+    {"id":8,"name":"Tekken 7","description":"","price":48000,"discount":2,"image":"tekken7.png"},
+    {"id":9,"name":"The Hunter","description":"","price":11390,"discount":0,"image":"Thehunter.png"}]
