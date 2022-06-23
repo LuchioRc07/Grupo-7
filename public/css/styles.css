@@ -3,20 +3,6 @@
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
-
-   background-image: url(/images/fondo-home.jpg);
-   background-attachment: fixed;
-
-}
-
-:root {
- --purple:#9271C2;
- --blue:#2D1674;
- --white:#FFF2FF;
- --cream:#BEAFC2;
- --light-purple:#695E93;
- --dark:#211522;
- --violet:#613659;
 }
 
 .IP:hover {
@@ -27,11 +13,12 @@
    background-image: url(/images/fondo-home.jpg);
    background-size: cover;
 }
+
+
 /*  HEADER  */
+
 .header{
     background: #8d0000d1;
-    width: 100%;
-    flex-wrap: nowrap;
  
 }
 .top-header{
@@ -39,27 +26,19 @@
     justify-content: space-between;
 
 }
-
-.navegation, .navegation, .busqueda {
-    flex-flow: 25%;
-    flex-wrap: nowrap;
-
-}
-
 .navegation a{
     color: #000000;
     text-decoration: none;
-
 }
 
 .navegation ul li{
     display: inline-block;
-
     
 }
 .navegation ul li a{
     display: block;
     margin: 30px 15px;
+    
     
 }
 .navegation ul li:hover{
@@ -68,138 +47,12 @@
 }
 .busqueda{
     padding: 25px 5px;
-    
 }
 
-/* --Inicio CARRITO -- */
 
-.body-cart{
-    background-color: #ffffff;
-
-}
-
-.products-title {
-    font-size: 2.4em;
-    font-weight: 400;
-    color: var(--gray);
-  }
-  
-  .product-box {
-    background-color: #ffffff;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: 300ms;
-    margin: 20px 0;
-
-  }
-  
-  .product-box a {
-    display: block;
-    background-color: #ffffff;
-
-  }
-  
-  .product-box_image {
-    border-bottom: 1px solid var(--light-gray);
-  }
-  
-  .product-box_data {
-    padding: 15px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .product-box_data h2 {
-    font-size: 2.4em;
-    font-weight: 300;
-    margin: 0;
-  }
-  
-  .product-box_data span {
-    font-size: 1.5em;
-    font-weight: 300;
-    color: var(--green);
-    margin: 0 0 0 10px;
-  }
-  
-  .product-box_data p {
-    font-size: 1.5em;
-    width: 100%;
-    color: var(--gray);
-    margin: 0;
-    height: 0;
-    transition: 300ms;
-    overflow: hidden;
-  }
-  
-  .product-box_data i {
-    color: var(--green);
-    font-size: 1.8em;
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    border: solid 1px;
-    border-radius: 50%;
-    position: absolute;
-    top: -15px;
-    right: 15px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 300ms;
-  }
-  
-  .product-box:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-  
-  .product-box:hover p {
-    height: 40px;
-    margin-top: 15px;
-  }
-  
-  .product-box:hover i {
-    transform: rotate(360deg);
-    box-shadow: 0 0 5px var(--green);
-  }
-    .cart-image {
-    max-width: 10ch;
-    max-height: 2cm;
-  }
-  
-  .cart-item-name{
-    font-size: 2em;
-    
-  }
-
-  /* CSS used here will be applied after bootstrap.css */
-ul{
-    list-style:none;
-    margin:0;
-    padding:0;
-  }
-  .ratio-4-3{
-    width:100%;
-    position:relative;
-    background:url() 50% 50% no-repeat;
-    background-size:cover;
-    background-clip:content-box;
-  }
-  .ratio-4-3:before{
-      display:block;
-      content:"";
-      padding-top:75%;
-  }
-
-  /* -- FIN CARRITO -- */
-
-/* Footer */
+/* ---Footer--- */
 
 .footer {
-    width: 100%;
     background: #8d0000d1;
     margin-top: 20%;
     display: flex;
@@ -212,7 +65,9 @@ ul{
 
 }
 
-/* Login */
+
+/* ---Login--- */
+
 .login h2 {
     color: #9b1f1f;
     
@@ -225,17 +80,17 @@ ul{
 
     background: radial-gradient(#97171786, #b4696936);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     margin: 30px 20px;
     padding: 20px;
     border: solid #9b1f1f;
-    width: 100%;
- 
 }
+
 .reg-sec{
     width: 70%;
 }
+
 .login .log{
     margin: 30px;
     border: solid #9b1f1f;
@@ -251,57 +106,50 @@ ul{
 background: rgba(46, 2, 2, 0.567);
 color: #bb0116;
 }
+
 .form input .text{
     background: rgba(46, 2, 2, 0.567);
     color: #bb0116;
-    }
+}
 
 .log{
     background-color: rgba(0, 0, 0, 0.771)  
 }
-.fraselog{
-    align-self: center;
-    color: #9b1f1f;
-    font-size: 25px;
 
+.fraselog{
+    color: #9b1f1f;
+    font-size: xxx-large;
+    padding-right: 40%;
+    width: 5%;
     text-shadow: black 0.1em 0.1em 0.2em;
-    
 }
+
 .retro-gamesLog {
     background-color: #9b1f1f;
     text-shadow: rgba(0, 0, 0, 0.567) 0.1em 0.1em 0.2em;
     border-radius: 5px;
-
 }
-/* HOME */
+
+
+/* ---HOME--- */
+
+
 .rotate{
     color:#FFF2FF;
     margin: 10px;
-    image-rendering: optimizeQuality;
-    
 }
 
 .main {
-    width: 100%;
     display: flex;
     justify-content: space-between;
-
-    flex-direction: column;
-    margin: auto;
-    padding: 50px 15px;
-
+    width: 100%;
 }
 
 .sDestacados p{
-    color: #FFF2FF;  
-
-    
-
+    color: #FFF2FF;   
 }
 .sDestacados h4{
     color: #FFF2FF;
-
-
     
 }
 .sDestacados .article description:hover{
@@ -315,46 +163,40 @@ color: #bb0116;
     color: #FFF2FF;
 }
 .article{
-    /* width: 100%; */
+    width: 100%;
 }
 
-/* Register */
+/* ---Register--- */
 
 .body-register {
     background-image: url(/images/fondo-home.jpg);
-   background-attachment: fixed;
-    
-}
-
-.body-register article {
-
+    background-attachment: fixed;
 }
 
 .register {
     background: radial-gradient(#97171786, #b4696936);
     display: flex;
-    margin: 15px 0px 15px 0px;
+    margin: 20px auto;
     justify-content: center;
     text-align: center;
 
-    padding-top: 30px;
+    padding: 20px;
     border: solid #9b1f1f;
-    width: 100%;
+    width: 70%;
 }
 
 .frase{
     font-size: x-large;
     margin:auto;
     width: 15%;
-    color: red;
+    color: var(--cream);
     border-radius: 5px;
     border-style: hidden;
     text-shadow: black 0.1em 0.1em 0.2em;
 }
 
-
 .retro-games {
-    background-color: red;
+    background-color: var(--cream);
     border-radius: 3px;
 }
 
@@ -386,12 +228,10 @@ color: #bb0116;
      color: blue;
 }
 
-
 .terminos {
-     background-color: red;
+     background-color: lightgrey;
 
 }
-
 
 .WHAT{
     font-size: 20px;
@@ -413,14 +253,20 @@ color: #bb0116;
 .error-404:hover{
     color: white;
 }
-/* Product Cart */
 
 
-/* Product Detail */
+/* ---Product Cart--- */
 
 
-/* Media Quares */
-/*Phone*/
+
+
+/* ---Product Detail--- */
+
+
+
+
+/* ---Media Quares--- */
+
 @media (min-width: 361px) {
 
 }
@@ -429,9 +275,7 @@ color: #bb0116;
     
 }
 
-@media (min-width: 1200px) {
-   
-}
+
 
 
 
