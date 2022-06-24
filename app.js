@@ -4,8 +4,8 @@ const path = require("path");
 const methodOverride = require("method-override");
 
 
-const routersMain = require("./routes/main");
-const routersUser = require("./routes/users");
+const routersMain = require("./src/routes/main");
+const routersUser = require("./src/routes/users");
 
 app.set("view engine", "ejs");
 
