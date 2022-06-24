@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "cookieparser": "^0.1.0",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "method-override": "^3.0.0",
@@ -23,5 +24,8 @@
     "url": "https://github.com/LuchioRc07/Grupo-7/issues"
   },
   "homepage": "https://github.com/LuchioRc07/Grupo-7#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3"
+  }
 }

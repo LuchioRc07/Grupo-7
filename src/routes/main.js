@@ -8,7 +8,6 @@ const mainController = require("../controllers/mainController");
 router.get("/", mainController.home);
 router.get("/login", mainController.login);
 router.get("/register", mainController.register);
-router.get("/detail", mainController.detail);
 router.get("/cart", mainController.cart);
 
 module.exports = router; 

@@ -1,6 +1,6 @@
-const express = require("express");
+const fs = require('fs');
 const path = require("path");
-const ejs = require("ejs");
+
 
 const controlador = {
     home: (req, res) => {
@@ -12,12 +12,11 @@ const controlador = {
     register: (req, res) => {
         res.render(path.join(__dirname, "../views/register.ejs"))
     },
+    
     cart: (req, res) => {
-        res.render(path.join(__dirname, "../views/productCart.ejs"))
+        res.render(path.join(__dirname, "../views/cart.ejs"))
     },
-    detail: (req, res) => {
-        res.render(path.join(__dirname, "../views/productDetail.ejs"))
-    }
+
 
 };
 
