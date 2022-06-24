@@ -4,7 +4,7 @@
 <%- include('partials/head', {title: product.name}) %>
 <body>
 	<!-- Header -->
-	<%- include('partials/headerNavbar') %>
+	<%- include('partials/header') %>
 	<!-- /Header -->
 
 	<!-- product detail -->
@@ -17,8 +17,8 @@
 		</div>
 		<div class="product-detail">
 			<div class="row">
-				<div class="col-12 col-lg-8">
-					<img src="/images/products/<%=product.image%>" alt="product image" class="product-detail-img">
+				<div class="product-box_image_detail">
+					<img src="/images/<%=product.image%>" alt="product image" class="product-detail-img">
 					<p class="product-detail-description">
 						<%=product.description%>
 					</p>
@@ -49,21 +49,21 @@
 
 						<form action="/users/addToCart/<%= product.id %>" method="POST" style="display: inline-bock">
 							
-							<button style="display: inline-block; width: 100%;" type="submit" class="mt-4 buy-now-button">AGREGAR AL CARRITO</button>
+							<button style="display: inline-block; width: 100%;" type="submit" class="mt-4 buy-now-button">Agregar al Carrito</button>
 
 						</form>
 						<form action="/users/cart" style="display: inline-bock">
 							
-							<button style="display: inline-block; width: 100%;" type="submit" class="mt-4 buy-now-button">COMPRAR</button>
+							<button style="display: inline-block; width: 100%;" type="submit" class="mt-4 buy-now-button">Comprar</button>
 
 						</form>
 
 						<!-- <a href="/user/addToCart" class="buy-now-button">COMPRAR AHORA</a> -->
 						<hr>
 
-						<a href="/products/<%=product.id%>/edit" class="action-button edit">EDITAR PRODUCTO</a>
+						<a href="/products/<%=product.id%>/edit" class="action-button edit">Editar Producto</a>
 						<form action="/products/<%=product.id%>/delete?_method=DELETE" method="POST" style="display: inline-flex">
-							<button type="submit" class="action-button delete">ELIMINAR</button>
+							<button type="submit" class="action-button delete">Eliminar</button>
 						</form>
 					</article>
 				</div>

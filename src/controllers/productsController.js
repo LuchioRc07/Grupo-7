@@ -11,19 +11,19 @@ const controller = {
 		res.render ("products", {products, toThousand})
 	},
 
-	// Detail - Detail from one product
+	// Detail - Detail from one product 
 	detail: (req, res) => {
 		let idProduct = req.params.id;
 		let product = products.find(product => product.id == idProduct)
-		res.render("detail", {product, toThousand})
+		res.render("productDetail", {product, toThousand})
 	},
 
-	// Create - Form to create
+	// Create - Form to create   /// falta terminar!!! ************** 
 	create: (req, res) => {
 		res.render("product-create-form")
 	},
-
-	// Create -  Method to store
+ 
+	// Create -  Method to store   /// falta terminar!!! **************
 	store: (req, res) => {
 		console.log("llegue al store!")
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -52,7 +52,7 @@ const controller = {
 		
 	},
 
-	// Update - Form to edit
+	// Update - Form to edit       /// falta terminar!!! **************
 	edit: (req, res) => {
 		console.log("llegue al edit!")
 		let idProduct = req.params.id;
@@ -61,7 +61,7 @@ const controller = {
 		res.render( 'product-edit-form', { title: product.name, productToEdit: product} );
 	},
 
-	// Update - Method to update
+	// Update - Method to update        /// falta terminar!!! **************
 	update: (req, res) => {
 
 		let products = JSON.parse( fs.readFileSync( productsFilePath, 'utf-8' ) );
@@ -96,7 +96,7 @@ const controller = {
 
 	},
 
-	// Delete - Delete one product from DB
+	// Delete - Delete one product from DB      /// falta terminar!!! **************
 	destroy : (req, res) => {
 		console.log("llegue al delete!")
 		let idProduct = req.params.id;
