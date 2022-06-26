@@ -322,6 +322,11 @@ color: #bb0116;
     text-shadow: black 0.1em 0.1em 0.2em;
 }
 
+.fondo-product{
+    background-image: url(/images/fondo-home.jpg);
+        background-attachment: fixed;
+}
+
 .body-cart h1{
     color: #9b1f1f;
     padding-right: 40%;
