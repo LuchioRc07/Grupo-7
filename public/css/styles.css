@@ -168,12 +168,15 @@ color: #bb0116;
 
 
 /* ---HOME--- */
-
+.sDestacados{
+  color:#FFF2FF;
+  text-align: center;
+    
+}
 
 .rotate{
     color:#FFF2FF;
-    margin: 10px;
-    width: 50%;
+    text-align: center;
     
 }
 
