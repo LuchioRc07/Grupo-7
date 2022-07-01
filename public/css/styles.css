@@ -89,13 +89,12 @@
     flex-direction: row;
     justify-content: center;
     text-align: center;
-    border: solid #9b1f1f;
+    border: solid orangered;
 }
 
 
 .login .log{
     margin: 30px;
-    border: solid #9b1f1f;
     border-radius: 3px;
     padding: 10px;
     background:rgba(46, 2, 2, 0.567)
@@ -161,7 +160,7 @@ color: #bb0116;
 }
 
 .retro-gamesLog {
-    background-color: #9b1f1f;
+    background-color: orange;
     text-shadow: rgba(0, 0, 0, 0.567) 0.1em 0.1em 0.2em;
     border-radius: 5px;
 }
@@ -229,40 +228,38 @@ color: #bb0116;
     text-align: center;
 
     padding: 20px;
-    border: solid #9b1f1f;
+    border: solid orangered;
     width: 80%;
 }
 
 .frase{
-    font-size: 24px;
+    font-size: 25px;
     margin:auto;
-    width: 15%;
-    border-radius: 5px;
-    border-style: hidden;
+    /* border-style: hidden; */
     text-shadow: black 0.1em 0.1em 0.2em;
     color: #9b1f1f;
-    width: 5%;
-    flex-grow: 0.5;
+    border-radius: orange 3px;
+
 }
 
 .retro-games {
-    background-color: #9b1f1f;
+    background-color: orange;
     text-shadow: rgb(0 0 0 / 57%) 0.1em 0.1em 0.2em;
     border-radius: 5px;
-    flex-grow: 0.5;
+ 
 
 }
 
 .form {
      border-left: solid #211522 2px;
      border-right: solid black 1.5px;
-     flex-grow: 0.5;
+
 }
 
 .form input {
     border-radius: 3px;
     border-style: hidden;
-    flex-grow: 0.5;
+
 }
 
 .user, .mail, .avatar, .pass, .button-register {
@@ -285,8 +282,8 @@ color: #bb0116;
 }
 
 .terminos {
-     background-color: lightgrey;
-     flex-grow: 0.5;
+     background-color: orange;
+     
 
 }
 
@@ -585,8 +582,10 @@ color: #bb0116;
 
 /* ---Media Quares--- */
 
-@media (min-width: 361px) {
 
+
+@media (min-width: 361px) and (min-width: 769px) {
+ 
 }
 
 @media (min-width: 769px){
