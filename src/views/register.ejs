@@ -17,20 +17,28 @@
                     <!-- <label for="user">Ingresá tu Nombre de Usuario</label> -->
                     <input type="text" id="user" name="user" minlength="3" placeholder="Nombre de usuario" required>
                 </div>
+                <!-- <label for="email">Ingresá tu Mail</label> -->
 
                 <div class="mail">
-                    <!-- <label for="email">Ingresá tu Mail</label> -->
                     <input type="email" id="email" minlength="10" name="email" placeholder="Ingresá tu Email" required>           
                 </div>
-
-                <div class="avatar">
+                
+                <!-- <div class="avatar">
                     <label for="avatar">Ingresá tu Foto</label>
-                    <input type="file" id="avatar" name="avatar">
-                </div>
+                    <input  type="file" class="hidden"  id="avatar" name="avatar">
+                    <input class="btn" for="avatar" type="submit" value="Upload" id="avatar" name="avatar">
+                </div> -->
+
+                <div class="fileUpload btn btn-primary">
+                    <label class="upload">
+                      <input name='Image' type="file"/>
+                    Ingresá tu Foto
+                    </label>
+                  </div>
 
                 <div class="pass">
                     <label for="pass">Ingresá tu Password</label><br>
-                    <input type="password" id="pass"  name="pass" placeholder="Elija un Password" required>
+                    <input type="password" id="pass" name="pass" placeholder="Elija un Password" required>
                     <input type="password" name="pass_confirm" placeholder="Confirmá tu Password" required>
                 </div>
 

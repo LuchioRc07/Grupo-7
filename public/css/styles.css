@@ -275,6 +275,20 @@ color: #bb0116;
      width: 120px;
 }
 
+.pass {
+  color: orangered;
+
+}
+
+input[type="file"]
+{
+  display:none;
+}
+.fileUpload input.upload 
+{
+    display: inline-block;
+}
+
 .button-register input:hover {
      background-color: green;
      color: blue;
