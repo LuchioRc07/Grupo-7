@@ -50,4 +50,4 @@ app.use((err, req, res, next) => {
 module.exports = app;
 
 
-////////********------        CORRER LA APP CON: nodemon src/bin/www       ------**********//////////
+////////********------        CORRER LA APP CON:    nodemon src/bin/www    ------**********//////////
