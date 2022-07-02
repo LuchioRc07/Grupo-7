@@ -17,6 +17,24 @@
 
 /*  HEADER  */
 
+.desplegable-header{
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.desplegable-header :hover .list{
+  display: block;
+}
+
+.list{
+  display: none;
+  position: absolute;
+  background-color: red;
+}
+
 .header{
     background: #8d0000d1;
     width: 100%;
