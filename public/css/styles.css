@@ -55,13 +55,17 @@
 
 /* ---Footer--- */
 
+.caja-footer{
+  margin-top: 15%;
+}
+
 .footer {
     font-size: 12px;
     background: #8d0000d1;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0px 5%;
+    
 }
 .HF{
     color: black
@@ -333,12 +337,9 @@ input[type="file"]
     color: #9b1f1f; 
     padding-right: 40%;
     text-shadow: black 0.1em 0.1em 0.2em;
+    
 }
 
-.fondo-product{
-    background-image: url(/images/fondo-home.jpg);
-        background-attachment: fixed;
-}
 
 .body-cart h1{
     color: #9b1f1f;
@@ -370,8 +371,20 @@ input[type="file"]
       content:"";
       padding-top:75%;
   }
+
+  .img-product-conteiner{
+    background-image: url(/images/EscamasNegras.jpeg);
+  }
+
+  .row{
+    background-image: url(/images/EscamasNegras.jpeg);
+    color: whitesmoke;
+    background-size: cover;
+  }
+
   .row2{
     background-color: white;
+
   }
   
 /*====== Products ======*/
