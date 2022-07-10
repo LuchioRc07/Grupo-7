@@ -70,6 +70,53 @@
     flex-grow: 0.23;
 }
 
+/* ---HOME--- */
+.sDestacados{
+  color:#FFF2FF;
+  text-align: center;
+    
+}
+
+.rotate{
+    color:#FFF2FF;
+    text-align: center;
+    
+}
+
+.rotate div {
+
+    image-rendering: optimizeQuality;
+    
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+}
+
+.sDestacados p{
+    color: #FFF2FF;   
+}
+.sDestacados h4{
+    color: #FFF2FF;
+    
+}
+.sDestacados .article description:hover{
+    text-decoration: underline;
+}
+
+.sOfertas p{
+    color: #FFF2FF;
+}
+.sOfertas .description{
+    color: #FFF2FF;
+}
+.article{
+    width: 100%;
+}
+
 
 /* ---Footer--- */
 
@@ -184,54 +231,6 @@ color: #bb0116;
     background-color: orange;
     text-shadow: rgba(0, 0, 0, 0.567) 0.1em 0.1em 0.2em;
     border-radius: 5px;
-}
-
-
-/* ---HOME--- */
-.sDestacados{
-  color:#FFF2FF;
-  text-align: center;
-    
-}
-
-.rotate{
-    color:#FFF2FF;
-    text-align: center;
-    
-}
-
-.rotate div {
-
-    image-rendering: optimizeQuality;
-    
-}
-
-.main {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    flex-direction: column;
-}
-
-.sDestacados p{
-    color: #FFF2FF;   
-}
-.sDestacados h4{
-    color: #FFF2FF;
-    
-}
-.sDestacados .article description:hover{
-    text-decoration: underline;
-}
-
-.sOfertas p{
-    color: #FFF2FF;
-}
-.sOfertas .description{
-    color: #FFF2FF;
-}
-.article{
-    width: 100%;
 }
 
 /* ---Register--- */
