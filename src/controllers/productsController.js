@@ -5,6 +5,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
+
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
@@ -18,7 +19,7 @@ const controller = {
 		res.render("productDetail", {product, toThousand})
 	},
 
-	// Create - Form to create   /// falta terminar!!! ************** 
+	// Create - Form to create   /// falta terminar!!! **************  Hay que poner un boton de Agregar Producto en la lista de productos o en en Header que vaya a http://localhost:3011/products/create 
 	create: (req, res) => {
 		res.render("product-create-form")
 	},
@@ -26,14 +27,14 @@ const controller = {
 	// Create -  Method to store   /// falta terminar!!! **************
 	store: (req, res) => {
 		console.log("llegue al store!")
+
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		const idN = products.lenght
+		const idN = products.length
 
 		let name        = req.body.name;
 		let price       = req.body.price;
 		let discount    = req.body.discount;
 		let category    = req.body.category;
-		let description = req.body.description;
 
 		let product = {
 			id:idN,
@@ -41,24 +42,24 @@ const controller = {
 			price: price,
 			discount: discount,
 			category: category,
-			description: description,
+			image: "generica.png" // falta poner la imagen q sube el usuario
 		}
 		products.push(product)
-		console.log(product)
+		//console.log(product)
 		//guardarlo!
 		fs.writeFileSync (productsFilePath , JSON.stringify(products), {encoding: 'utf-8'})
 
-		res.redirect('/')
+		res.redirect('/') // redirige a http://localhost:3011/products/
 		
 	},
 
 	// Update - Form to edit       /// falta terminar!!! **************
 	edit: (req, res) => {
-		console.log("llegue al edit!")
-		let idProduct = req.params.id;
-		let product = products.find(product => product.id == idProduct)
-		console.log(product)
-		res.render( 'product-edit-form', { title: product.name, productToEdit: product} );
+		// console.log("llegue al edit!")
+		//let idProduct = req.params.id;
+		let product = products.find(product => product.id == req.params.id )
+		// console.log(product)
+		res.render('product-edit-form', {product} );
 	},
 
 	// Update - Method to update        /// falta terminar!!! **************
@@ -72,6 +73,8 @@ const controller = {
 		let discount    = req.body.discount;
 		let category    = req.body.category;
 		let description = req.body.description;
+		let product = products.find(product => product.id == req.params.id )
+
 
 		let editProduct = {
 
@@ -80,7 +83,8 @@ const controller = {
 			price: price,
 			discount: discount,
 			category: category,
-			description: description
+			description: description,
+			image: product.image // traemos la imagen original
 
 		};	
 
@@ -96,16 +100,21 @@ const controller = {
 
 	},
 
-	// Delete - Delete one product from DB      /// falta terminar!!! **************
+	// Delete - Delete one product from DB      
 	destroy : (req, res) => {
-		console.log("llegue al delete!")
+
 		let idProduct = req.params.id;
 		let productAElim = products.find(product => product.id == idProduct)
-		products.splice(productAElim.id-1, 1)
-		console.log(products)
+		products.splice(productAElim.id-1, 1) // si le llega id=10, es que hay 11 productos. 
+		fs.writeFileSync( productsFilePath , JSON.stringify( products ), { encoding: 'utf-8' } );
 		res.redirect('/products')
+
+
 
 	}
 };
 
 module.exports = controller;
+
+
+

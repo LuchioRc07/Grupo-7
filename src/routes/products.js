@@ -8,14 +8,7 @@ const path=require('path')
 const productsController = require('../controllers/productsController');
 
 /*** GET ALL PRODUCTS ***/ 
-router.get('/', productsController.index); 
-
-
-/*** CREATE ONE PRODUCT ***/ 
-router.get('/create', productsController.create); 
-router.post('/create', productsController.store); 
-
-
+router.get('/', productsController.index); // http://localhost:3011/products/ 
 
 /*** GET ONE PRODUCT ***/  // --> asume que la url base es: http://localhost:3010/products/ porque estoy en la ruta "products.js"
 router.get('/detail/:id', productsController.detail); 
@@ -25,6 +18,9 @@ router.get('/detail/:id', productsController.detail);
 router.get('/:id/edit', productsController.edit); 
 router.put('/:id/edit', productsController.update); 
 
+/*** CREATE ONE PRODUCT ***/ 
+router.get('/create', productsController.create);  // http://localhost:3011/products/create
+router.post('/create', productsController.store); 
 
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/:id/delete', productsController.destroy); 

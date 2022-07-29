@@ -34,6 +34,7 @@ app.use("/users", routersUser);
 app.use("/products", routersProduct);
 
 
+
 // ************ error handler ************
 app.use((err, req, res, next) => {
     // set locals, only providing error in development
@@ -50,4 +51,4 @@ app.use((err, req, res, next) => {
 module.exports = app;
 
 
-////////********------        CORRER LA APP CON:    nodemon src/bin/www    ------**********//////////
+////////********------        CORRER LA APP CON:    nodemon     ------**********//////////
