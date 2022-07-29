@@ -64,10 +64,12 @@
 						<!-- <a href="/user/addToCart" class="buy-now-button">COMPRAR AHORA</a> -->
 						<hr>
 
-						<a href="/products/<%=product.id%>/edit" class="action-button edit">Editar Producto</a>
-						<form action="/products/<%=product.id%>/delete?_method=DELETE" method="POST" style="display: inline-flex">
+						<a href="/products/<%=product.id%>/edit" class="action-button edit">Editar Producto</a> <!-- solo redirige  -->
+
+						<form action="/products/<%=product.id%>/delete?_method=DELETE" method="POST" style="display: inline-flex"> <!-- es post porque ejecuta el metodo de productsController  -->
 							<button type="submit" class="action-button delete">Eliminar</button>
 						</form>
+						
 					</article>
 				</div>
 			</div>
