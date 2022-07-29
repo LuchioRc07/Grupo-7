@@ -5,6 +5,8 @@ const express = require('express');
 //const logger = require('morgan');
 const path = require('path');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const cookies = require('cookie-parser');
+const session = require('express-session');
 
 
 
@@ -18,6 +20,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 //app.use(cookieParser());
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(cookies());
+app.use(session({
+	secret: "Shhh, It's a secret",
+	resave: false,
+	saveUninitialized: false,
+}));
 
 
 // ************ Template Engine - (don't touch) ************
@@ -26,14 +34,18 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 
 //  *************** Routes   ************** 
 const routersMain = require("./routes/main");
-const routersUser = require("./routes/users");
+// const routersUser = require("./routes/users");
 const routersProduct = require("./routes/products");
+const userRoutes = require('./routes/userRoutes');
 
 app.use("/", routersMain);
-app.use("/users", routersUser);
+// app.use("/users", routersUser);
 app.use("/products", routersProduct);
+app.use('/user', userRoutes);
 
 
+// app.use(userLoggedMiddleware);
+// const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');falta termionar de arreglarlo!!!
 
 // ************ error handler ************
 app.use((err, req, res, next) => {

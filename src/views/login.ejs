@@ -15,6 +15,11 @@
                
                 <div class="log">
                 <input type="text" name="user" placeholder="Nombre de usuario">
+                <% if (locals.errors && errors.name) { %>
+                    <div class="text-danger">
+                        <%= errors.name.msg %>
+                    </div>
+                <% } %>
                 </div>
                 
                 <div class="log">
