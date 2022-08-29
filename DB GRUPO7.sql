@@ -42,7 +42,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'ARK',10500,50,'visited'),(2,'Elder Ring',5000,30,'in-sale'),(3,'FIFA 22',2000,10,'visited'),(4,'NIOH I y II',10000,25,'visited'),(5,'PVZ 1',5300,20,'visited'),(6,'Rainbow Six Siege',4999,15,'visited'),(7,'Scum',9850,30,'visited'),(8,'Tekken7',16000,10,'visited'),(9,'The Hunter',7000,10,'visited');
+INSERT INTO `products` VALUES (1,'ARK',10500,50,'visited',null,null),(2,'Elder Ring',5000,30,'in-sale',null,null),(3,'FIFA 22',2000,10,'visited',null,null),(4,'NIOH I y II',10000,25,'visited',null,null),(5,'PVZ 1',5300,20,'visited',null,null),(6,'Rainbow Six Siege',4999,15,'visited',null,null),(7,'Scum',9850,30,'visited',null,null),(8,'Tekken7',16000,10,'visited',null,null),(9,'The Hunter',7000,10,'visited',null,null);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -71,7 +71,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (1,'ARK',10500,50,'visited'),(2,'Elder Ring',5000,30,'in-sale'),(3,'FIFA 22',2000,10,'visited');
+INSERT INTO `cart` VALUES (1,'ARK',10500,50,'visited',null,null),(2,'Elder Ring',5000,30,'in-sale',null,null),(3,'FIFA 22',2000,10,'visited',null,null);
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,5 +100,14 @@ INSERT INTO `users` VALUES (1,'Prueba 1','1234');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2019-12-18 17:36:45
 
+select * from products
