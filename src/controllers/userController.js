@@ -14,93 +14,252 @@ const {
 
 const User = require('../models/users');
 
-const controller = {
-	register: (req, res) => {
-		return res.render('register');
-	},
-	processRegister: (req, res) => {
-		const resultValidation = validationResult(req);
+// const controller = {
+// 	register: (req, res) => {
+// 		return res.render('register');
+// 	},
+// 	processRegister: (req, res) => {
+// 		const resultValidation = validationResult(req);
 
-		if (resultValidation.errors.length > 0) {
-			return res.render('register', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			});
-		}
+// 		if (resultValidation.errors.length > 0) {
+// 			return res.render('register', {
+// 				errors: resultValidation.mapped(),
+// 				oldData: req.body
+// 			});
+// 		}
 
-		let userInDB = User.findByField('email', req.body.email);
+// 		let userInDB = User.findByField('email', req.body.email);
 
-		if (userInDB) {
-			return res.render('register', {
-				errors: {
-					email: {
-						msg: 'Este email ya está registrado'
-					}
-				},
-				oldData: req.body
-			});
-		}
+// 		if (userInDB) {
+// 			return res.render('register', {
+// 				errors: {
+// 					email: {
+// 						msg: 'Este email ya está registrado'
+// 					}
+// 				},
+// 				oldData: req.body
+// 			});
+// 		}
 
-		let userToCreate = {
-			...req.body,
-			password: bcryptjs.hashSync(req.body.password, 10),
-			avatar: req.file.filename
-		}
+// 		let userToCreate = {
+// 			...req.body,
+// 			password: bcryptjs.hashSync(req.body.password, 10),
+// 			avatar: req.file.filename
+// 		}
 
-		let userCreated = User.create(userToCreate);
+// 		let userCreated = User.create(userToCreate);
 
-		return res.redirect('/login');
-	},
-	login: (req, res) => {
-		return res.render('login');
-	},
-	loginProcess: (req, res) => {
-		let userToLogin = User.findByField('email', req.body.email);
+// 		return res.redirect('/login');
+// 	},
+// 	login: (req, res) => {
+// 		return res.render('login');
+// 	},
+// 	loginProcess: (req, res) => {
+// 		let userToLogin = User.findByField('email', req.body.email);
 		
-		if(userToLogin) {
-			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-			if (isOkThePassword) {
-				delete userToLogin.password;
-				req.session.userLogged = userToLogin;
+// 		if(userToLogin) {
+// 			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+// 			if (isOkThePassword) {
+// 				delete userToLogin.password;
+// 				req.session.userLogged = userToLogin;
 
-				if(req.body.remember_user) {
-					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
-				}
+// 				if(req.body.remember_user) {
+// 					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+// 				}
 
-				return res.redirect('/user/profile');
-			} 
-			return res.render('login', {
-				errors: {
-					email: {
-						msg: 'Las credenciales son inválidas'
-					}
-				}
-			});
-		}
+// 				return res.redirect('/user/profile');
+// 			} 
+// 			return res.render('login', {
+// 				errors: {
+// 					email: {
+// 						msg: 'Las credenciales son inválidas'
+// 					}
+// 				}
+// 			});
+// 		}
 
-		return res.render('login', {
-			errors: {
-				email: {
-					msg: 'No se encuentra este email en nuestra base de datos'
-				}
-			}
-		});
-	},
-	profile: (req, res) => {
-		return res.render('userProfile', {
-			user: req.session.userLogged
-		});
-	},
+// 		return res.render('login', {
+// 			errors: {
+// 				email: {
+// 					msg: 'No se encuentra este email en nuestra base de datos'
+// 				}
+// 			}
+// 		});
+// 	},
+// 	profile: (req, res) => {
+// 		return res.render('userProfile', {
+// 			user: req.session.userLogged
+// 		});
+// 	},
 
-	logout: (req, res) => {
-		res.clearCookie('userEmail');
-		req.session.destroy();
-		return res.redirect('/');
-	}
+// 	logout: (req, res) => {
+// 		res.clearCookie('userEmail');
+// 		req.session.destroy();
+// 		return res.redirect('/');
+// 	}
+// }
+
+// module.exports = controller;
+
+
+
+// controller option
+const {  validationResult}= require("express-validator")
+const bcrypt = require('bcryptjs')
+const session = require("express-session")
+const db = require('../database/models')
+
+
+module.exports = {
+    // historial: (req, res) => {
+    //     res.render('userProfile/historialCompras', {
+    //         title: "Historial", 
+    //         session: req.session ? req.session : ""})
+    // },
+    login: (req, res) => {
+        res.render('/login', {title: "Login", session: req.session ? req.session : ""})
+    },
+    register: (req,res) =>{
+        res.render('/register', {title: "registro", session: req.session ? req.session : ""})
+    },
+    
+    processLogin: (req, res) => {
+        let errors = validationResult(req)
+        
+        if(errors.isEmpty()){
+            
+            db.User.findOne({
+                where:{
+                    email: req.body.user
+                }
+            })
+            .then(user=>{
+                req.session.user = {
+                    id: user.id,
+                    userName: user.email,
+                    rol: user.rol
+                }
+                /** creamos la cookie */
+                if(req.body.remember){
+                   res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60})
+                }
+                /------------------/
+                /** guardamos el usuario en locals */
+                res.locals.user = req.session.user
+                /**redireccionamos al home si todo esta ok */
+                res.redirect('/')
+            })
+            .catch(err=> console.log(err))
+         
+            /**sino -> */
+        }else{
+            res.render('/login', {
+                title: "Login",
+                errors: errors.mapped(),
+                session: req.session ? req.session : ""
+            })
+        }
+        
+    },   
+    proccesRegister: (req,res) => {
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
+            let{
+                user, 
+                email,
+                pass
+            } = req.body
+    
+            db.User.create(
+                {
+                    Name: name,
+                    email, 
+                    password: bcrypt.hashSync(pass, 10),
+                    rol: 'user',
+                    image: "default-image.png",
+                }
+            )
+                .then(()=>{
+                    res.redirect('/login')
+                })
+                .catch(err=> console.log(err))
+                
+            }else{
+            res.render('/register', {
+                title: "Registro",
+                errors :errors.mapped(),
+                old : req.body,
+                session: req.session ? req.session : ""
+            })
+        }
+    },
+    accountEdit: (req, res) => {
+        db.User.findOne({
+            where: {
+                id: req.session.user.id
+            }
+        })
+        .then(user => {
+            res.render('userProfile/userEdit', {title: "Edita tu cuenta", session: req.session, user})
+        })
+    },
+    
+
+    
+    perfilUsers: (req, res) => {
+        db.User.findOne({
+            where: {
+                id: req.session.user.id
+            }
+        })
+        .then(user => {
+            res.render('userProfile/ perfil ', {title: "perfil de usuario", session: req.session, user})
+        })
+    },
+    userEdit: (req,res) =>{
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
+            db.User.update({
+                Name: req.body.name,
+                // lastName: req.body.lastName,
+                // address: req.body.address,
+                // cp: req.body.cp,
+                // province: req.body.provincia,
+                // city: req.body.localidad,
+                image: req.file && req.file.filename
+            },{
+                where:{
+                    id: +req.session.user.id
+                }
+            })
+            .then(() => {
+                req.session.user = {
+                    id: req.session.user.id,
+                    userName: req.body.name,
+                    rol: req.session.user.rol
+                }
+                res.redirect('/') 
+            })
+            .catch(err=> console.log(err))
+        }else{
+            db.User.findOne({
+                where: {
+                    id: req.session.user.id
+                }
+            })
+            .then(user => {
+                res.render('userProfile/userEdit', {title: "Edita tu cuenta", session: req.session, user,errors :errors.mapped() ,old : req.body})
+            })
+        }
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        if(req.cookies.cookieFTS){
+            res.cookie('cookieFTS','',{maxAge:-1})
+        }
+        res.redirect('/')
+    }
 }
-
-module.exports = controller;
-
 // const userController = {
 //     register: (req, res) => {
 //         res.render("register");
@@ -213,168 +372,3 @@ module.exports = controller;
 
 
 // module.exports = userController;
-
-
-// controller option
-// const {  validationResult}= require("express-validator")
-// const bcrypt = require('bcryptjs')
-// const session = require("express-session")
-// const db = require('../database/models')
-
-
-// module.exports = {
-//     historial: (req, res) => {
-//         res.render('users/historialCompras', {
-//             title: "Historial", 
-//             session: req.session ? req.session : ""})
-//     },
-//     login: (req, res) => {
-//         res.render('users/Login', {title: "Login", session: req.session ? req.session : ""})
-//     },
-//     register: (req,res) =>{
-//         res.render('users/registro', {title: "registro", session: req.session ? req.session : ""})
-//     },
-    
-//     processLogin: (req, res) => {
-//         let errors = validationResult(req)
-        
-//         if(errors.isEmpty()){
-            
-//             db.User.findOne({
-//                 where:{
-//                     email: req.body.email
-//                 }
-//             })
-//             .then(user=>{
-//                 req.session.user = {
-//                     id: user.id,
-//                     userName: user.firstName + " " + user.lastName,
-//                     rol: user.rol
-//                 }
-//                 /** creamos la cookie */
-//                 if(req.body.remember){
-//                    res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60})
-//                 }
-//                 /------------------/
-//                 /** guardamos el usuario en locals */
-//                 res.locals.user = req.session.user
-//                 /**redireccionamos al home si todo esta ok */
-//                 res.redirect('/')
-//             })
-//             .catch(err=> console.log(err))
-         
-//          /**sino -> */
-//         }else{
-//             res.render('users/Login', {
-//                 title: "Login",
-//                 errors: errors.mapped(),
-//                 session: req.session ? req.session : ""
-//             })
-//         }
-
-//     },   
-//     proccesRegister: (req,res) => {
-//         let errors = validationResult(req)
-//         if(errors.isEmpty()){
-//             let{
-//                 name,
-//                 lastName, 
-//                 email,
-//                 password1
-//             } = req.body
-    
-//             db.User.create(
-//                 {
-//                     firstName: name,
-//                     lastName,
-//                     email, 
-//                     password: bcrypt.hashSync(password1, 10),
-//                     rol: 'user',
-//                     image: "default-image.png",
-//                     province: '',
-//                     address: '',
-//                     cp: 0,
-//                     city: ''
-//                 }
-//             )
-//                 .then(()=>{
-//                     res.redirect('/users/login')
-//                 })
-//                 .catch(err=> console.log(err))
-
-//         }else{
-//             res.render('users/registro', {
-//                 title: "Registro",
-//                 errors :errors.mapped(),
-//                 old : req.body,
-//                 session: req.session ? req.session : ""
-//             })
-//         }
-//     },
-//     accountEdit: (req, res) => {
-//         db.User.findOne({
-//             where: {
-//                 id: req.session.user.id
-//             }
-//         })
-//         .then(user => {
-//             res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session, user})
-//         })
-//     },
-
-
-
-//     perfilUsers: (req, res) => {
-//         db.User.findOne({
-//             where: {
-//                 id: req.session.user.id
-//             }
-//         })
-//         .then(user => {
-//             res.render('users/perfil', {title: "perfil de usuario", session: req.session, user})
-//         })
-//     },
-//     userEdit: (req,res) =>{
-//         let errors = validationResult(req)
-//         if(errors.isEmpty()){
-//             db.User.update({
-//                 firstName: req.body.firstName,
-//                 lastName: req.body.lastName,
-//                 address: req.body.address,
-//                 cp: req.body.cp,
-//                 province: req.body.provincia,
-//                 city: req.body.localidad,
-//                 image: req.file && req.file.filename
-//             },{
-//                 where:{
-//                     id: +req.session.user.id
-//                 }
-//             })
-//             .then(() => {
-//                 req.session.user = {
-//                     id: req.session.user.id,
-//                     userName: req.body.firstName + " " + req.body.lastName,
-//                     rol: req.session.user.rol
-//                 }
-//             res.redirect('/') 
-//             })
-//             .catch(err=> console.log(err))
-//         }else{
-//             db.User.findOne({
-//                 where: {
-//                     id: req.session.user.id
-//                 }
-//             })
-//             .then(user => {
-//                 res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session, user,errors :errors.mapped() ,old : req.body})
-//             })
-//         }
-//     },
-//     logout: (req, res) => {
-//         req.session.destroy();
-//         if(req.cookies.cookieFTS){
-//             res.cookie('cookieFTS','',{maxAge:-1})
-//         }
-//         res.redirect('/')
-//     }
-// }

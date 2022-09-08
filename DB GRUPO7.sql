@@ -85,6 +85,8 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` smallint(6) NOT NULL,
   `name` varchar(123) NOT NULL,
+  -- `email` varchar(100) NOT NULL,
+  -- `image` varchar(150) DEFAULT NULL,
   `pass` varchar(123) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
