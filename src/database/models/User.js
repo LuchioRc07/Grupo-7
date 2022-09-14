@@ -1,4 +1,5 @@
-const sequelize = require("sequelize")
+const sequelize = require("sequelize");
+import { Sequealize, Model, DataTypes } from "sequealize";
 
 module.exports = (sequelize, dataTypes) => {
     let alias = 'User'

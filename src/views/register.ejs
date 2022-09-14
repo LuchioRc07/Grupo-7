@@ -42,7 +42,7 @@
 
                 <div class="fileUpload btn btn-primary">
                     <label class="upload">
-                      <input  name='Image' type="file" <%= locals.errors && errors.Image ? 'is-invalid' : null %>/>
+                      <input id="avatar"  name='Image' type="file" <%= locals.errors && errors.Image ? 'is-invalid' : null %>/>
                     Ingresá tu Foto
                     
                     </label>
@@ -56,7 +56,7 @@
                 <div class="pass">
                     <label for="pass">Ingresá tu Password</label><br>
                     <input type="password" id="pass" name="pass" placeholder="Elija un Password" <%= locals.errors && errors.password ? 'is-invalid' : null %> required>
-                    <input type="password" name="pass_confirm" placeholder="Confirmá tu Password" required>
+                    <!-- <input type="password" name="pass_confirm" placeholder="Confirmá tu Password" required> -->
                     <% if (locals.errors && errors.pass) { %>
                         <div class="text-danger">
                             <%= errors.pass.msg %>
