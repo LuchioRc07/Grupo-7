@@ -12,7 +12,7 @@
             <div class="retro-games">
                 <h2>Retro Games</h2>
             </div>
-            <form action="/" method="POST" class="form" enctype="multipart/form-data">
+            <form action="/register" method="POST" class="form" enctype="multipart/form-data">
                 <div class="user ">
                     <!-- <label for="user">Ingresá tu Nombre de Usuario</label> -->
                     <input  type="text" id="user" name="user" minlength="3" value="<%= locals.oldData ? oldData.user : null %>" <%= locals.errors && errors.name ? 'is-invalid' : null %> placeholder="Nombre de usuario" required>

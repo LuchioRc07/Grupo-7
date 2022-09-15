@@ -7,7 +7,7 @@ const path = require('path');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const cookies = require('cookie-parser');
 const session = require('express-session');
-const sequealize = require('sequealize');
+const sequealize = require('sequelize');
 const mysql = require('MySQL2');
 
 

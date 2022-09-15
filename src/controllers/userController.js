@@ -104,10 +104,10 @@ const User = require('../models/users');
 
 
 // controller option
-const {  validationResult}= require("express-validator")
-const bcrypt = require('bcryptjs')
-const session = require("express-session")
-const db = require('../database/models')
+const   validation  = require("express-validator")
+const bcrypt        = require('bcryptjs')
+const session       = require("express-session")
+const db            = require('../database/models')
 
 
 module.exports = {
@@ -119,9 +119,12 @@ module.exports = {
     login: (req, res) => {
         res.render('/login', {title: "Login", session: req.session ? req.session : ""})
     },
-    register: (req,res) =>{
-        res.render('/register', {title: "registro", session: req.session ? req.session : ""})
-    },
+    register: (req,res)=>{
+        users.findAll({include: [{model:categories}, {model:imagesusers}]
+        })
+    .then(users => {
+        res.render('/register', {users});
+    }},
     
     processLogin: (req, res) => {
         let errors = validationResult(req)
@@ -252,6 +255,20 @@ module.exports = {
             })
         }
     },
+    create: (req, res) => {
+                   let usuario = {
+                    id: archivoJSON[archivoJSON.length - 1].id + 1,
+        
+                       nombre: req.body.user, 
+                    //    edad: req.body.edad,
+                       email: req.body.email,
+                       pass: req.body.pass,
+                       pass_confirm: req.body.pass_confirm,
+                       avatar: req.body.avatar
+                   }
+                   res.render(usuario)
+                //    archivoJSON.push(usuario)
+               },
     logout: (req, res) => {
         req.session.destroy();
         if(req.cookies.cookieFTS){
