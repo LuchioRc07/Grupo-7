@@ -124,7 +124,7 @@ module.exports = {
         })
     .then(users => {
         res.render('/register', {users});
-    }},
+    })},
     
     processLogin: (req, res) => {
         let errors = validationResult(req)

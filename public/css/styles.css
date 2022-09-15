@@ -85,6 +85,17 @@
 
 
 /* ---HOME--- */
+
+.proximamente{
+  margin: auto;
+  color: gold;
+}
+
+.proximamente h2{
+  text-align: center;
+  border: solid rgba(0, 0, 0 , 0.3) 3px;
+}
+
 .sDestacados{
   color:#FFF2FF;
   text-align: center;
