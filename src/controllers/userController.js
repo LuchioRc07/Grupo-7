@@ -123,7 +123,7 @@ module.exports = {
         users.findAll({include: [{model:categories}, {model:imagesusers}]
         })
     .then(users => {
-        res.render('/register', {users});
+        res.render('register', {users});
     })},
     
     processLogin: (req, res) => {
@@ -165,7 +165,9 @@ module.exports = {
         
     },   
     proccesRegister: (req,res) => {
-        let errors = validationResult(req)
+        let errors = validationResult(req);
+        // console.log(errors);
+        console.log(req.body);
         if(errors.isEmpty()){
             let{
                 user, 
@@ -175,8 +177,8 @@ module.exports = {
     
             db.User.create(
                 {
-                    Name: name,
-                    email, 
+                    name: user,
+                    email: email, 
                     password: bcrypt.hashSync(pass, 10),
                     rol: 'user',
                     image: "default-image.png",
@@ -188,7 +190,7 @@ module.exports = {
                 .catch(err=> console.log(err))
                 
             }else{
-            res.render('/register', {
+            res.render('register', {
                 title: "Registro",
                 errors :errors.mapped(),
                 old : req.body,

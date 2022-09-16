@@ -158,8 +158,15 @@
     
 }
 .HF{
-    color: black
+    color: black;
+    margin: auto;
 
+}
+.HF h4{
+  /* background-color: rgb(144, 144, 158); */
+  border-radius:3px;
+  border-color: ;
+  font-size: 25px;
 }
 
 
@@ -347,8 +354,11 @@ input[type="file"]
 }
 
 .WHAT{
-    
+    position: fixed;
     font-size: 30px;
+    right: 5%;
+    top:60%;
+    
 }
 .Whattsapp {
     display: flex;

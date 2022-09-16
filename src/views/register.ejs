@@ -12,7 +12,7 @@
             <div class="retro-games">
                 <h2>Retro Games</h2>
             </div>
-            <form action="/register" method="POST" class="form" enctype="multipart/form-data">
+            <form action="/user/register" method="POST" class="form" enctype="multipart/form-data">
                 <div class="user ">
                     <!-- <label for="user">Ingresá tu Nombre de Usuario</label> -->
                     <input  type="text" id="user" name="user" minlength="3" value="<%= locals.oldData ? oldData.user : null %>" <%= locals.errors && errors.name ? 'is-invalid' : null %> placeholder="Nombre de usuario" required>
@@ -56,7 +56,7 @@
                 <div class="pass">
                     <label for="pass">Ingresá tu Password</label><br>
                     <input type="password" id="pass" name="pass" placeholder="Elija un Password" <%= locals.errors && errors.password ? 'is-invalid' : null %> required>
-                    <!-- <input type="password" name="pass_confirm" placeholder="Confirmá tu Password" required> -->
+                    <input type="password" name="pass_confirm" placeholder="Confirmá tu Password" required>
                     <% if (locals.errors && errors.pass) { %>
                         <div class="text-danger">
                             <%= errors.pass.msg %>

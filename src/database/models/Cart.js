@@ -8,21 +8,17 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         } ,
-        name: {
-            type: dataTypes.STRING
+        id_user:{
+            type: dataTypes.INTEGER,
+            
+       
         },
-        price: {
-            type: dataTypes.DOUBLE
-        },
-        discount: {
-            type: dataTypes.DOUBLE
-        },
-        category: {
-            type: dataTypes.STRING
-        }, 
-        description: {
-            type: dataTypes.STRING
-        },
+        id_product:{
+            type: dataTypes.INTEGER,
+        
+           
+        }
+    
         /*
         createdAt: {
             type: dataTypes.DATE

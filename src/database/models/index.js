@@ -6,7 +6,7 @@ const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
-const db = {};
+let db = {};
 
 let sequelize;
 if (config.use_env_variable) {
@@ -31,7 +31,7 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
-// db = require( '../../handlers/associations.js' )( db );
+db = require( '../../handlers/associations.js' )( db );
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

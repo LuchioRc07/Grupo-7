@@ -15,6 +15,9 @@ module.exports = (sequelize, dataTypes) => {
         pass: {
             type: dataTypes.STRING
         },
+        email:{
+            type: dataTypes.STRING
+        }
    
 
     }
