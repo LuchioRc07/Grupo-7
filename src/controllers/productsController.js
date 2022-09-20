@@ -124,9 +124,9 @@ const db = require('../database/models');
 
 
 module.exports = {
-    product: (req, res) => {
-        db.Product.findAll({
-            include: [{association: "category"}, {association: "image"}]
+    index: (req, res) => {
+        db.Producto.findAll({
+            // include: [{association: "category"}, {association: "image"}]
         })
         .then((products) => {
             res.render('products', {products, n:false,title:"Productos", session: req.session ? req.session : ""});
@@ -233,9 +233,6 @@ module.exports = {
         		// let productAElim = products.find(product => product.id == idProduct)
         		// products.splice(productAElim.id-1, 1) // si le llega id=10, es que hay 11 productos. 
         		// fs.writeFileSync( productsFilePath , JSON.stringify( products ), { encoding: 'utf-8' } );
-        	},
-            index: (req, res) => {
-        		res.render ("products", {products, toThousand})
         	},
             edit: (req, res) => {
                 		console.log("llegue al edit!")
