@@ -174,13 +174,13 @@ module.exports = {
                 email,
                 pass
             } = req.body
-    
+           
             db.User.create(
                 {
                     name: user,
                     email: email, 
-                    password: bcrypt.hashSync(pass, 10),
-                    rol: 'user',
+                    pass: bcrypt.hashSync(pass, 10),
+                    role: 'user',
                     image: "default-image.png",
                 }
             )
