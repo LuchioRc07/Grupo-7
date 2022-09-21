@@ -9,6 +9,7 @@ window.addEventListener('load', function(){
         if(campoNombre.value == ""){
             alert('El campo de nombre está')
         }
+        formulario.submit();
 
     });
 } )

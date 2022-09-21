@@ -218,7 +218,7 @@ module.exports = {
             }
         })
         .then(user => {
-            res.render('userProfile/ perfil ', {title: "perfil de usuario", session: req.session, user})
+            res.render('userProfile', {title: "perfil de usuario", session: req.session, user})
         })
     },
     userEdit: (req,res) =>{
