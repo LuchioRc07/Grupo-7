@@ -17,71 +17,44 @@
 
 /*  HEADER  */
 
-
-
-.desplegable-header{
-  color: #000000;
+header{
+  margin-bottom: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #8d0000d1;
   align-items: center;
- 
+  padding: 10px;
 }
 
-.desplegable-header :hover .list{
-  display: block;
-}
-
-.list{
-  display: none;
-  position: absolute;
-  /* background-color: red; */
-  
-}
-
-.header{
-    background: #8d0000d1;
-    width: 100%;
-    
-}
-
-.logo-home {
+.logo {
+  display: flex;
   align-items: center;
 }
 
-
-.top-header{
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    
+.logo img{
+  height: 40px;
+  margin-right: 10px;
 
 }
 
-.navegation {
-  flex-direction: column;
+header a{
+  text-decoration: none;
+  color: black;
 }
 
-.navegation a{
-    color: #000000;
-    text-decoration: none;
+nav a {
+  font-weight: 600;
+  padding-right: 15px;
 }
 
-.navegation ul li{
-    display: inline-block;
-    
-}   
-.navegation ul li a{
-    display: block;
-    margin: 30px 15px;
-    padding: 5px;
-    
-    
+a:hover{
+  color: red;
 }
-.navegation ul li:hover{
-    background-color: darkblue;
-    transition: all 0.5s linear;
-    
-}
+
+
+
+
 
 
 /* ---HOME--- */
@@ -163,9 +136,7 @@
 
 }
 .HF h4{
-  /* background-color: rgb(144, 144, 158); */
   border-radius:3px;
-  border-color: ;
   font-size: 25px;
 }
 
@@ -681,8 +652,15 @@ input[type="file"]
 
 
 
-@media (min-width: 361px) and (min-width: 769px) {
-  .list{
+@media (min-width: 361px) and (min-width: 700px) {
+  header{
+      flex-direction: column;
+    }
+    nav{
+      padding: 10px 0px;
+    }
+}
+/* .list{
     display: block;
     position: absolute;
     
@@ -693,31 +671,20 @@ input[type="file"]
     align-items: center;
     align-self: center;
   }
-  div .desplegable-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-  }
-  .desplegable{
-    display: none;
-    justify-content:flex-start;
-  }
-  .desplegable nav {
-    align-items: center;
-    font-size: 2px;
-  }
+ 
   
   .busqueda{
     margin: 15px;
   }
-}
+*/
 
-@media (min-width: 769px){
+@media (min-width: 700px){
     
+  header{
+    flex-direction: initial;
+  }
+  nav{
+    padding: 10px 0px;
+  }
+
 }
-
-
-
-
-
