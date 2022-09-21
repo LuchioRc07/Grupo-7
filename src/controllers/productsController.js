@@ -4,7 +4,8 @@ const path = require('path');
 // const product = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../database/models');
-
+const express = require('express');
+const {validationResult} = require('express-validator');
 
 // const controller = {
 // 	// Root - Show all products
@@ -140,31 +141,56 @@ module.exports = {
     store: (req, res) => {
         		console.log("llegue al store!")
         
-        		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        		const idN = products.length
-        
-        		let name        = req.body.name;
-        		let price       = req.body.price;
-        		let discount    = req.body.discount;
-        		let category    = req.body.category;
-                let description = req.body.description;
-                let image       = req.body.image;
-        
-        		let product = {
-        			id:idN,
-        			name: name,
-        			price: price,
-        			discount: discount,
-        			category: category,
-                    description: description,
-        			image: "generica.png" // falta poner la imagen q sube el usuario
-        		}
-        		// products.push(product)
-        		console.log(product)
-        		//guardarlo!
-        		// fs.writeFileSync (productsFilePath , JSON.stringify(products), {encoding: 'utf-8'})
-        
-        		res.redirect('/products') // redirige a http://localhost:3011/products/
+        		// 
+                let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let arrayImages = []
+            if(req.files){
+                req.files.forEach(Image => {
+                    arrayImages.push(image.filename)
+                })
+            }
+            let { name, description, discount, price, category, image} = req.body
+            db.Producto.create( {
+                name,
+                price,
+                category,
+                description,
+                discount,
+                image,
+                // stock
+            })
+            .then(product => {
+                if(arrayImages.length > 0){
+                    let images = arrayImages.map(image => {
+                        return {
+                            name: image,
+                            // product_id: product.id
+                        }
+                    })
+                    db.Image.bulkCreate(images)
+                    .then(()=> res.redirect('/products'))
+                    .catch(err => console.log(err))                    
+                }else {
+                    db.Image.create({
+                        name: "default-image.png",
+                        id_product: product.id
+                    })
+                    .then(()=> res.redirect('/products')) ///adminProductos Faltaría poner que solo un admin puede agregar productos
+                    .catch(err => console.log(err))
+                }
+               
+            })
+            .catch(error => {
+                res.send(error)
+            })
+        } else {
+            db.Category.findAll()
+            .then(categories => {
+            res.render('products', {categories, title: "Products", session: req.session ? req.session : "", errors : errors.mapped(),
+            old : req.body,});
+        })
+        } 
                 
         	},
         

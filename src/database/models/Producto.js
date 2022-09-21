@@ -23,6 +23,9 @@ module.exports = (sequelize, dataTypes) => {
         description: {
             type: dataTypes.STRING
         },
+        image:{
+            type: dataTypes.STRING
+        }
         /*
         createdAt: {
             type: dataTypes.DATE
