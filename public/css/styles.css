@@ -302,12 +302,13 @@ input[type="file"]
 
 }
 
+/* WhatsAPP */
+
 .WHAT{
     position: fixed;
     font-size: 30px;
     right: 2%;
-    top:60%;
-    
+    top:60%;  
 }
 .Whattsapp {
     display: flex;
@@ -316,6 +317,8 @@ input[type="file"]
     color:greenyellow ;
     display: inline-block;
 }
+
+
 
 .error-404 {
     margin: auto;

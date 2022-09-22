@@ -32,4 +32,6 @@ estas plataformas:
 ( https://www.rockstargames.com )
 
 
-Nuestro tablero de trabajo, en trello: https://trello.com/b/h5vWoeGO/grupo-7
+
++ Nuestro tablero de trabajo, en trello: https://trello.com/b/h5vWoeGO/grupo-7
++ Ruta a nuestro repositorio: https://github.com/LuchioRc07/Grupo-7
