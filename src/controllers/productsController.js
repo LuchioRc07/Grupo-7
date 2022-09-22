@@ -200,8 +200,8 @@ module.exports = {
         		//let idProduct = req.params.id;
         		// let product = products.find(product => product.id == req.params.id )
                 db.products.findByPk(req.params.id)
-                    .then(function(product){
-                        res.render('product-edit-form', {product: product});
+                    .then(function(Producto){
+                        res.render('product-edit-form', {Producto: Producto});
                     })
         		// console.log(product)
         		// res.render('product-edit-form', {product} );
@@ -268,60 +268,68 @@ module.exports = {
                 		res.render('product-edit-form', {product} );
                 	},
     detail: (req, res) => {                          
-        const product = db.Product.findByPk(req.params.id, {
-            include: [{association: "category"}, {association: "image"}]
+         db.Producto.findByPk(req.params.id, {
+            // include: [{association: "name"}, {association: "imagen"}]
         })
-        const slider = db.Product.findAll({
-            include: [{association: "category"}, {association: "image"}]
+        .then(products => {
+            // console.log(products);
+            res.render('productDetail', {product: products} );
         })
-        Promise.all([product,slider])
-        .then(([product, slider]) => {
-            if (product !== null){ 
-                let sliderProducts = slider.filter(element => element.discount > 0);    //  <----   Sololamente hay 2 productos por categoría, así que el slider muestra los 12 productos que hay hasta el momento
-                let texto = product.description.split('\r\n')
-                res.render('ProductoDetalle', {
-                    sliderTitle : "También te pueden interesar",
-                    sliderProducts,
-                    product,
-                    texto,
-                    n: false,
-                    title: product.name + " ",
-                    session: req.session ? req.session : ""
-                }) 
-            }else{
-                res.send('No tenemos ese producto, pero tenemos muchos otros más...')
-            }
-        })
-        .catch(error => console.log(error))
+        .catch(err => {
+            console.log(err);
+        } )
+        
+        
+        // const slider = db.Producto.findAll({
+        //     // include: [{association: "name"}, {association: "imagen"}]
+        // })
+        // Promise.all([product,slider])
+        // .then(([product, slider]) => {
+        //     if (product !== null){ 
+        //         let sliderProducts = slider.filter(element => element.discount > 0);    //  <----   Sololamente hay 2 productos por categoría, así que el slider muestra los 12 productos que hay hasta el momento
+        //         let texto = product.description.split('\r\n')
+        //         res.render('ProductoDetalle', {
+        //             sliderTitle : "También te pueden interesar",
+        //             sliderProducts,
+        //             product,
+        //             texto,
+        //             n: false,
+        //             title: product.name + " ",
+        //             session: req.session ? req.session : ""
+        //         }) 
+        //     }else{
+        //         res.send('No tenemos ese producto, pero tenemos muchos otros más...')
+        //     }
+        // })
+        // .catch(error => console.log(error))
     },
     cart: (req, res) =>{
-        res.render('Carrito', {title: "Carrito", session: req.session ? req.session : ""})
+
+        res.render('cart', {title: "cart", session: req.session ? req.session : ""})
     },
-    category: (req,res) =>{
-        const category = db.Category.findOne({
-            where: {
-                name: req.params.categoria.trim()
-            }
-        })
-        const products = db.Product.findAll({
-            include: [{association: "category"}, {association: "image"}]
-        })
-        Promise.all([category, products])
-        .then(([category, products] )=> {
-            
-            let filtradosPorCategoria = []
-            products.forEach(producto =>{
-                if(producto.category_id === category.id){
-                    filtradosPorCategoria.push(producto)
+    carrito: (req, res) => {
+
+    },
+    addToCart(req, res) { //agrega 1 producto al carrito y muestra el carrito actualizado.
+        let idProduct = req.params.id; //recibo el ID como parametro de la vista detail.ejs
+                carrito = db.Cart.create({
+                    id_user: req.user.id, 
+                   id_product: idProduct
+                }) //leo el carrito actualizado. Puedo venir de un Delete o de un Add reciente.
+                console.log(carrito)
+                .then(()=>{
+
+                    res.render("cart")
                 }
-            })
-            
-            
-            if(filtradosPorCategoria.length > 0){
-                res.render('products', {products: filtradosPorCategoria,n: true,category,title:"Categoría", session: req.session ? req.session : ""})
-            }else {  
-                res.render('products', {products, title:"Categoria",n: false,category,session: req.session ? req.session : ""})
-            }   
-        })
-    }
-}
+                )
+                .catch(e=>{
+                    console.log(e);
+                });
+                 //busco en la lista de productos el producto que el usuario quiere agregar por su ID
+        //         nuevoProd.id = Object.keys(carrito).length
+        //         carrito.push(nuevoProd) //agrego el producto nuevo al carrito
+        //         fs.writeFileSync (cartFilePath , JSON.stringify(carrito), {encoding: 'utf-8'}) //grabo el carrito
+        //         res.redirect("/users/cart") //muestro la vista del carrito actualizado
+        //       }
+    
+}}

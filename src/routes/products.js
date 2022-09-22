@@ -22,6 +22,10 @@ router.put('/:id/edit', productsController.update);
 router.get('/create', productsController.create);  // http://localhost:3011/products/create
 router.post('/create', productsController.store); 
 
+// agregar producto
+router.get("/cart", productsController.cart);
+router.post("/users/addToCart/:id", productsController.addToCart);
+
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/:id/delete', productsController.destroy); 
 

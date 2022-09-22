@@ -31,11 +31,11 @@
 						<h2 class="product-detail-title"><%=product.name%></h2>
 						
 							<p class="product-detail-price small">
-								<span>$<%= toThousand(product.price) %></span>
+								<span>$<%= product.price %></span>
 								<b><%=product.discount%>% OFF</b>
 							</p>
 							<p class="product-detail-price">
-								$<%= toThousand(product.price*(1-product.discount/100)) %>
+								$<%= product.price*(1-product.discount/100) %>
 							</p>
 
 
@@ -50,7 +50,7 @@
 							</li>
 						</ul>
 
-						<form action="/users/addToCart/<%= product.id %>" method="POST" style="display: inline-bock">
+						<form action="/users/addToCart/<%=product.id %>" method="POST" style="display: inline-bock">
 							
 							<button style="display: inline-block; width: 100%;" type="submit" class="mt-4 buy-now-button">Agregar al Carrito</button>
 
