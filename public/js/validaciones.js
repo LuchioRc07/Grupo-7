@@ -7,8 +7,8 @@ window.addEventListener('load', function(){
         var campoNombre = document.querySelector('input.log');
 
         if(campoNombre.value == ""){
-            alert('El campo de nombre está')
-        }
+            console.log('Hubo un error en el nombre')
+          }
         formulario.submit();
 
     });
