@@ -649,6 +649,8 @@ input[type="file"]
     .peliculas-recomendadas {
       display: none;   
     }
+    /*  HEADER  */
+    
     header{
       padding: 3px 0;
       flex-direction: column;
@@ -656,12 +658,43 @@ input[type="file"]
       flex-wrap: wrap;
     }
     
-    
+    .Perfil{
+      display: none;
+    }
+    .desplegable-header:hover{
+
+      color: green
+    }
+
+
+.logo-name{
+  display: none;
+}
+
+header a{
+  display: none;
+}
+
+.menu-burg {
+  display: none;
+}
+
+a:hover{
+  
+}
+
+
+
+
+
 }
 @media (min-width: 561px) and (min-width: 700px) {
  
   nav{
     padding: 10px 0px;
   }
+  .desplegable-header{
+     
+    }
 
 }
