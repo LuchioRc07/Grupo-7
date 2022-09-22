@@ -17,71 +17,44 @@
 
 /*  HEADER  */
 
-
-
-.desplegable-header{
-  color: #000000;
+header{
+  margin-bottom: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #8d0000d1;
   align-items: center;
- 
+  padding: 10px;
 }
 
-.desplegable-header :hover .list{
-  display: block;
-}
-
-.list{
-  display: none;
-  position: absolute;
-  /* background-color: red; */
-  
-}
-
-.header{
-    background: #8d0000d1;
-    width: 100%;
-    
-}
-
-.logo-home {
+.logo {
+  display: flex;
   align-items: center;
 }
 
-
-.top-header{
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    
+.logo img{
+  height: 40px;
+  margin-right: 10px;
 
 }
 
-.navegation {
-  flex-direction: column;
+header a{
+  text-decoration: none;
+  color: black;
 }
 
-.navegation a{
-    color: #000000;
-    text-decoration: none;
+nav a {
+  font-weight: 600;
+  padding-right: 15px;
 }
 
-.navegation ul li{
-    display: inline-block;
-    
-}   
-.navegation ul li a{
-    display: block;
-    margin: 30px 15px;
-    padding: 5px;
-    
-    
+a:hover{
+  color: red;
 }
-.navegation ul li:hover{
-    background-color: darkblue;
-    transition: all 0.5s linear;
-    
-}
+
+
+
+
 
 
 /* ---HOME--- */
@@ -142,6 +115,10 @@
     width: 100%;
 }
 
+.carousel-inner{
+  padding: 25px 0px 10px 0px;
+  background: #8d0000d1;
+}
 
 /* ---Footer--- */
 
@@ -160,13 +137,13 @@
 .HF{
     color: black;
     margin: auto;
-
 }
 .HF h4{
-  /* background-color: rgb(144, 144, 158); */
   border-radius:3px;
   font-size: 25px;
 }
+
+
 
 
 /* ---Login--- */
@@ -212,33 +189,6 @@ color: #bb0116;
     color: #bb0116;
 }
 
-.busqueda {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-form_input {
-    border: solid 1px lightgrey;
-    display: block;
-    width: 100%;
-    padding: 7px 35px 7px 7px;
-    border-radius: 3px;
-    height: 40px;
-    font-size: 1.5em;
-  }
-  
-  .search-form_button {
-    position: absolute;
-    right: 2px;
-    margin-left: 1px;
-    height: 20%;
-    background-color: #ffffff;
-    border: none;
-    color: var(--gray);
-    cursor: pointer;
-  }
-  
 
 .log{
     background-color: rgba(0, 0, 0, 0.771)  
@@ -352,12 +302,13 @@ input[type="file"]
 
 }
 
+/* WhatsAPP */
+
 .WHAT{
     position: fixed;
     font-size: 30px;
     right: 2%;
-    top:60%;
-    
+    top:60%;  
 }
 .Whattsapp {
     display: flex;
@@ -366,6 +317,8 @@ input[type="file"]
     color:greenyellow ;
     display: inline-block;
 }
+
+
 
 .error-404 {
     margin: auto;
@@ -680,43 +633,35 @@ input[type="file"]
 
 
 
-@media (min-width: 361px) and (min-width: 769px) {
-  .list{
-    display: block;
-    position: absolute;
+@media (max-width: 561px) and (max-width: 700px) {
+  header{
+      flex-direction: column;
+    }
+    nav{
+      padding: 10px 0px;
+    }
+    .twoCarousel{
+      display: none;
+    }
+    .proximamente{
+      display: none;
+    }
+    .peliculas-recomendadas {
+      display: none;   
+    }
+    header{
+      padding: 3px 0;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     
-  }
-  .list ul{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-self: center;
-  }
-  div .desplegable-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-  }
-  .desplegable{
-    display: none;
-    justify-content:flex-start;
-  }
-  .desplegable nav {
-    align-items: center;
-    font-size: 2px;
-  }
-  
-  .busqueda{
-    margin: 15px;
-  }
-}
-
-@media (min-width: 769px){
     
 }
+@media (min-width: 561px) and (min-width: 700px) {
+ 
+  nav{
+    padding: 10px 0px;
+  }
 
-
-
-
-
+}
