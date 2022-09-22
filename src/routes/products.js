@@ -27,7 +27,7 @@ router.get("/cart", productsController.cart);
 router.post("/users/addToCart/:id", productsController.addToCart);
 
 /*** DELETE ONE PRODUCT***/ 
-router.delete('/:id/delete', productsController.destroy); 
+router.delete('/delete/:id', productsController.destroy); 
 
 
 module.exports = router;

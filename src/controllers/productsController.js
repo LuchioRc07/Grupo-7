@@ -199,9 +199,9 @@ module.exports = {
         		// console.log("llegue al edit!")
         		//let idProduct = req.params.id;
         		// let product = products.find(product => product.id == req.params.id )
-                db.products.findByPk(req.params.id)
-                    .then(function(Producto){
-                        res.render('product-edit-form', {Producto: Producto});
+                db.Producto.findByPk(req.params.id)
+                    .then(function(producto){
+                        res.render('product-edit-form', {product: producto});
                     })
         		// console.log(product)
         		// res.render('product-edit-form', {product} );
@@ -209,7 +209,7 @@ module.exports = {
         
         	// Update - Method to update        /// falta terminar!!! **************
         	update: (req, res) => {
-        
+                console.log("entre a update");
         		// let products = JSON.parse( fs.readFileSync( productsFilePath, 'utf-8' ) );
         		const id     = +req.params.id;
         
@@ -218,55 +218,78 @@ module.exports = {
         		let discount    = req.body.discount;
         		let category    = req.body.category;
         		let description = req.body.description;
-        		let product     = products.findByPk(product => product.id == req.params.id )
+        		// let products     = product.findByPk(product => product.id == req.params.id )
         
-        
-        		let editProduct = {
-        
-        			id: id,
+                db.Producto.update({
+                    id: id,
         			name: name,
         			price: price,
         			discount: discount,
         			category: category,
         			description: description,
-        			image: product.image // traemos la imagen original
+                }, {
+                    where: {id}
+                })
+                .then(() => {
+                    res.redirect( '/products' );
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        		// let editProduct = {
         
-        		};	
+        		// 	id: id,
+        		// 	name: name,
+        		// 	price: price,
+        		// 	discount: discount,
+        		// 	category: category,
+        		// 	description: description,
+        		// 	image: Producto.image // traemos la imagen original
         
-        		for( let i in products ) {
-        			if( products[ i ].id === id ) {
-        				products[ i ] = editProduct;
-        				break;
-        			}
-        		}
+        		// };	
+        
+        		// for( let i in products ) {
+        		// 	if( products[ i ].id === id ) {
+        		// 		products[ i ] = editProduct;
+        		// 		break;
+        		// 	}
+        		// }
                 
         		// fs.writeFileSync( productsFilePath , JSON.stringify( products ), { encoding: 'utf-8' } );
-        		res.render( '/product-edit-form' );
+        		
         
         	},
         
         	// Delete - Delete one product from DB      
         	destroy : (req, res) => {
-                db.products.destroy({
-                    
-                    where: req.params.id
-                    
-                }
+                console.log("entré al destroy")
+                console.log(db.Producto)
+                idDelete = +req.params.id;
+                db.Producto.destroy({
+                    where : { id: idDelete }
+                })
+                .then((event) => {
+                    res.redirect('/products')
+                })
+                .catch(err => {
+                    console.log(err);
+                })
                 
-                )
-        		res.redirect('/products');
+                
+               
+               
         		// let idProduct = req.params.id;
         		// let productAElim = products.find(product => product.id == idProduct)
         		// products.splice(productAElim.id-1, 1) // si le llega id=10, es que hay 11 productos. 
         		// fs.writeFileSync( productsFilePath , JSON.stringify( products ), { encoding: 'utf-8' } );
         	},
-            edit: (req, res) => {
-                		console.log("llegue al edit!")
-                		let idProduct = req.params.id;
-                		let product = products.findByPk(product => product.id == req.params.id )
-                		console.log(product)
-                		res.render('product-edit-form', {product} );
-                	},
+            // edit: (req, res) => {
+            //     		console.log("llegue al edit!")
+            //     		let idProduct = req.params.id;
+            //     		let product = producto.findByPk(product => product.id == req.params.id )
+            //     		// console.log(product)
+            //     		res.render('product-edit-form', {product} );
+            //     	},
     detail: (req, res) => {                          
          db.Producto.findByPk(req.params.id, {
             // include: [{association: "name"}, {association: "imagen"}]
