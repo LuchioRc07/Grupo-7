@@ -5,28 +5,36 @@
     <%- include("./partials/head") %>
     <body class="body-register">
         <%- include("./partials/header") %>
-                        
+            
+        
         <article class="register">
+            <div class="errores">
+    
+                <ul>
+                    
+                </ul>
+    
+            </div>
             <section class="reg-sec">
                 <p class="frase">Bienvenido a Nuestros Mundos!</p><br>
-            <div class="retro-games">
-                <h2>Retro Games</h2>
-            </div>
-            <form action="/user/register" method="POST" class="form" enctype="multipart/form-data">
+                <div class="retro-games">
+                    <h2>Retro Games</h2>
+                </div>
+                <form action="/user/register" method="POST" class="form register_form" enctype="multipart/form-data" > <!-- enctype="multipart/form-data" -->
                 <div class="user ">
                     <!-- <label for="user">Ingresá tu Nombre de Usuario</label> -->
-                    <input  type="text" id="user" name="user" minlength="3" value="<%= locals.oldData ? oldData.user : null %>" <%= locals.errors && errors.name ? 'is-invalid' : null %> placeholder="Nombre de usuario" required>
+                    <input  type="text" id="user" name="user"  placeholder="Nombre de usuario" > <!-- minlength="3" value="<%= locals.oldData ? oldData.user : null %>" <%= locals.errors && errors.name ? 'is-invalid' : null %> required -->
                     
-                    <% if (locals.errors && errors.user) { %>
+                    <!-- <% if (locals.errors && errors.user) { %>
                         <div class="text-danger">
                             <%= errors.user.msg %> 
                         </div>
-                    <% } %>
+                    <% } %> -->
                 </div>
                 <!-- <label for="email">Ingresá tu Mail</label> -->
 
                 <div class="mail">
-                    <input type="email" id="email" minlength="10" name="email" placeholder="Ingresá tu Email" <%= locals.errors && errors.email ? 'is-invalid' : null %> required>  
+                    <input type="email" id="email" name="email" placeholder="Ingresá tu Email" minlength="10" <%= locals.errors && errors.email ? 'is-invalid' : null %> required >  <!-- minlength="10" <%= locals.errors && errors.email ? 'is-invalid' : null %> required -->
                     <% if (locals.errors && errors.email) { %>
                         <div class="text-danger">
                             <%= errors.email.msg %>
@@ -42,33 +50,33 @@
 
                 <div class="fileUpload btn btn-primary">
                     <label class="upload">
-                      <input id="avatar"  name='Image' type="file" <%= locals.errors && errors.Image ? 'is-invalid' : null %>/>
+                      <input id="avatar"  name='Image' type="file" /> <!-- <%= locals.errors && errors.Image ? 'is-invalid' : null %> -->
                     Ingresá tu Foto
                     
                     </label>
-                    <% if (locals.errors && errors.Image) { %>
+                    <!-- <% if (locals.errors && errors.Image) { %>
 									<div class="text-danger">
 										<%= errors.Image.msg %>
 									</div>
-								<% } %>
+								<% } %> -->
                   </div>
 
                 <div class="pass">
                     <label for="pass">Ingresá tu Password</label><br>
-                    <input type="password" id="pass" name="pass" placeholder="Elija un Password" <%= locals.errors && errors.password ? 'is-invalid' : null %> required>
-                    <input type="password" name="pass_confirm" placeholder="Confirmá tu Password" required>
-                    <% if (locals.errors && errors.pass) { %>
+                    <input type="password" id="pass" name="pass" placeholder="Elija un Password" > <!-- <%= locals.errors && errors.password ? 'is-invalid' : null %> required -->
+                    <input type="password" id="pass_confirm" name="pass_confirm" placeholder="Confirmá tu Password" > <!-- required -->
+                    <!-- <% if (locals.errors && errors.pass) { %>
                         <div class="text-danger">
                             <%= errors.pass.msg %>
                         </div>
-                    <% } %>
+                    <% } %> -->
                 </div>
 
                 <br>
                 <br>
 
                 <div class="button-register">
-                    <input type="submit" value="Enviar">
+                    <input type="submit" id="enviar" value="Enviar">
                 </div>
 
                 <br>
@@ -81,6 +89,7 @@
         </section>
         </article>
         <%- include("./partials/footer") %>
-        <script src="/js/validaciones.js" ></script>
+        <!-- <script src="/js/validaciones.js" ></script> -->
+        <!-- <script src="/js/registerValidations.js" ></script> -->
     </body>
 </html>

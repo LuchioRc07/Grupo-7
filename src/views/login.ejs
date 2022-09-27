@@ -10,11 +10,19 @@
                 <div class="retro-gamesLog">
                     <h2>Retro Games</h2>
                 </div>
+
+                <div class="errores">
+    
+                    <ul>
+                        
+                    </ul>
+        
+                </div>
                 
-            <form action="/userProfile" method="POST" class="form"> <!-- aca tenemos que mostrar la foto del usuario, sus datos, sus compras anteriores, etc-->
+            <form action="/user/login" method="POST" class="form login_form"> <!-- aca tenemos que mostrar la foto del usuario, sus datos, sus compras anteriores, etc-->
                
                 <div class="log">
-                <input type="text" name="user" placeholder="Nombre de usuario">
+                <input type="text" id="user" name="user" placeholder="Nombre de usuario">
                 <% if (locals.errors && errors.name) { %>
                     <div class="text-danger">
                         <%= errors.name.msg %>
@@ -23,18 +31,17 @@
                 </div>
                 
                 <div class="log">
-                <input type="password" name="pass" placeholder="Contraseña">
+                <input type="password" id="pass" name="pass" placeholder="Contraseña">
                 </div>
                 
                 <div class="log">
-                <input type="submit" value="Ingresar">
+                <input type="submit" id="send" value="Ingresar">
                 </div>
             
             </form>
         </main>
        
         <%- include("./partials/footer") %>
-        <script src="/js/validaciones.js" ></script>
-        <script src="/js/loginValidation" ></script>
+        <!-- <script src="/js/loginValidations" ></script> -->
     </body>
 </html>
