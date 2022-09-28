@@ -678,12 +678,7 @@ input[type="file"]
     .Perfil{
       display: none;
     }
-    .desplegable-header:hover{
-
-      color: green
-    }
-
-
+    
 .logo-name{
   display: none;
 }
@@ -692,17 +687,6 @@ header a{
   display: none;
 }
 
-.menu-burg {
-  display: none;
-}
-
-a:hover{
-  
-}
-
-
-
-
 
 }
 @media (min-width: 561px) and (min-width: 700px) {
@@ -710,8 +694,8 @@ a:hover{
   nav{
     padding: 10px 0px;
   }
-  .desplegable-header{
-     
+  .logo{
+     justify-content: flex-start;
     }
 
 }
