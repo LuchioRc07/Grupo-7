@@ -15,7 +15,15 @@
 			</div>
 		</div>
 		<div class="col-12">
-			<form method="POST" action="create" >
+			<form method="POST" class="products_form" action="create" >
+
+				<div class="errores">
+    
+					<ul>
+						
+					</ul>
+		
+				</div>
 				
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
@@ -48,7 +56,7 @@
 					</div>
 					
 					<div class="col-12">
-						<button type="submit" class="buy-now-button">Guardar producto</button>
+						<button type="submit" id="crear_product" class="buy-now-button">Guardar producto</button>
 					</div>
 				</div>
 			</form>
@@ -61,6 +69,7 @@
 	<%- include('partials/footer') %>
 	<!-- /footer -->
 </div>
+<!-- <script src="/js/productsValidations.js" ></script> -->
 </body>	
 
 </html>

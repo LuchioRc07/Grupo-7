@@ -117,87 +117,156 @@ module.exports = {
     //         session: req.session ? req.session : ""})
     // },
     login: (req, res) => {
-        res.render('/login', {title: "Login", session: req.session ? req.session : ""})
+        res.render('login', {title: "Login", session: req.session ? req.session : ""})
     },
     register: (req,res)=>{
-        users.findAll({include: [{model:categories}, {model:imagesusers}]
-        })
-    .then(users => {
-        res.render('register', {users});
-    })},
+    //     users.findAll(/* {include: [{model:categories}, {model:imagesusers}]
+    //     } */)
+    // .then(users => {
+        res.render('register');
+    },
     
     processLogin: (req, res) => {
+        // console.log('processLogin');
         let errors = validationResult(req)
-        
-        if(errors.isEmpty()){
+        db.User.findOne({
+            where:{
+                name: req.body.user
+            }
+        })
+        .then((user) => {
+            // console.log(user);
+             
+            if(user){
+                let passOk = bcryptjs.compareSync(req.body.pass, user.pass);
+                if(passOk){
+                    console.log("la contraseña es correcta");
+                    req.session.user = user;
+                    // if(req.body.remember){
+                    //                res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60})
+                    // }
+                    res.redirect("/");
+
+                }else{
+                    console.log("la contraseña es incorrecta");
+                    res.render("login", {
+                        errors: {
+                            name: {
+                                msg: "credencials incorrect"
+                        }
+                    }
+                    })
+                }
+            }else{
+                res.render("login", {
+                    errors: {
+                        name: {
+                            msg: "user no registered"
+                    }
+                }
+                })
+            }
+
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+        // if(errors.isEmpty()){
             
-            db.User.findOne({
-                where:{
-                    email: req.body.user
-                }
-            })
-            .then(user=>{
-                req.session.user = {
-                    id: user.id,
-                    userName: user.email,
-                    rol: user.rol
-                }
-                /** creamos la cookie */
-                if(req.body.remember){
-                   res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60})
-                }
-                /------------------/
-                /** guardamos el usuario en locals */
-                res.locals.user = req.session.user
-                /**redireccionamos al home si todo esta ok */
-                res.redirect('/')
-            })
-            .catch(err=> console.log(err))
+        //     db.User.findOne({
+        //         where:{
+        //             email: req.body.user
+        //         }
+        //     })
+        //     .then(user=>{
+        //         console.log('user found');
+        //         req.session.user =  user;
+        //         // {
+        //         //     // id: user.id,
+        //         //     // userName: user.email,
+        //         //     // role: user.role
+
+        //         // }
+        //         /** creamos la cookie */
+        //         if(req.body.remember){
+        //            res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60})
+        //         }
+        //         /------------------/
+        //         /** guardamos el usuario en locals */
+        //         res.locals.user = req.session.user
+        //         /**redireccionamos al home si todo esta ok */
+        //         res.redirect('/')
+        //     })
+        //     .catch(err=> console.log(err))
          
-            /**sino -> */
-        }else{
-            res.render('/login', {
-                title: "Login",
-                errors: errors.mapped(),
-                session: req.session ? req.session : ""
-            })
-        }
+        //     /**sino -> */
+        // }else{
+        //     res.render('/login', {
+        //         title: "Login",
+        //         errors: errors.mapped(),
+        //         session: req.session ? req.session : ""
+        //     })
+        // }
         
     },   
     proccesRegister: (req,res) => {
+        console.log("registro");
         let errors = validationResult(req);
         // console.log(errors);
-        console.log(req.body);
-        if(errors.isEmpty()){
-            let{
-                user, 
-                email,
-                pass
-            } = req.body
-           
-            db.User.create(
-                {
-                    name: user,
-                    email: email, 
-                    pass: bcrypt.hashSync(pass, 10),
-                    role: 'user',
-                    image: "default-image.png",
-                }
-            )
-                .then(()=>{
-                    res.redirect('/login')
+        db.User.findOne({
+            where:{
+                email: req.body.email
+            }
+        })
+        .then((user) =>{
+            console.log(user);
+            if(user){
+                console.log("user Exist");
+                res.render("register", {
+                    errors: {
+                        email:{
+                            msg: "Este email ya se encuentra registrado!"
+                        }
+                    }
                 })
-                .catch(err=> console.log(err))
-                
             }else{
-            res.render('register', {
-                title: "Registro",
-                errors :errors.mapped(),
-                old : req.body,
-                session: req.session ? req.session : ""
-            })
+                console.log("user Not existe");
+
+                if(errors.isEmpty()){
+                    let{
+                        user, 
+                        email,
+                        pass
+                    } = req.body
+                   
+                    db.User.create(
+                        {
+                            name: user,
+                            email: email, 
+                            pass: bcrypt.hashSync(pass, 10),
+                            role: 'user',
+                            image: "default-image.png",
+                        }
+                    )
+                        .then(()=>{
+                            res.redirect('/user/login')
+                        })
+                        .catch(err=> console.log(err))
+                        
+                    }else{
+                    res.render('register', {
+                        title: "Registro",
+                        errors :errors.mapped(),
+                        old : req.body,
+                        session: req.session ? req.session : ""
+                    })
+                }
+            }
+        })
+        .catch((err) =>{
+            console.log(err);
         }
-    },
+    )},
     accountEdit: (req, res) => {
         db.User.findOne({
             where: {

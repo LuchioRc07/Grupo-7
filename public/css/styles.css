@@ -59,6 +59,17 @@ a:hover{
 
 /* ---HOME--- */
 
+.titles-home{
+  color: orangered;
+  border-radius: white 2px;
+  border-style: solid;
+  width: 20%;
+  font-size: 15px;
+  padding: 2px 0px 2px 0px;
+  margin: auto;
+ 
+}
+
 .proximamente{
   margin: auto;
   color: gold;
@@ -626,7 +637,13 @@ input[type="file"]
   }
   
   
+/* Validaciones */
 
+.errores{
+  color: red;
+  position: absolute;
+  background-color:rgba(0, 0, 0 , 0.6);
+}
 
 
 /* ---Media Quares--- */
