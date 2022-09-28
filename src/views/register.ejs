@@ -6,12 +6,15 @@
     <body class="body-register">
         <%- include("./partials/header") %>
             
-        
+        <% if (locals.errors) {%>
+            <% errors.forEach(error =>{%>
+                <p></p> <%= error.msg %>
+            <%})} %>
         <article class="register">
             <div class="errores">
     
                 <ul>
-                    
+                   
                 </ul>
     
             </div>

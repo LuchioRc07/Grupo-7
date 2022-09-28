@@ -38,16 +38,21 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
 
 //  *************** Routes   ************** 
-const routersMain = require("./routes/main");
+const routersMain       = require("./routes/main");
 // const routersUser = require("./routes/users");
-const routersProduct = require("./routes/products");
-const userRoutes = require('./routes/userRoutes');
-
+const routersProduct    = require("./routes/products");
+const userRoutes        = require('./routes/userRoutes');
+const apiUserRoutes     = require("./routes/api/apiUserRoutes");
+const apiProductRoutes  = require("./routes/api/apiProductRoutes");
 
 app.use("/", routersMain);
 // app.use("/users", routersUser);
 app.use("/products", routersProduct);
 app.use('/user', userRoutes);
+
+//Router Api´s
+app.use('/api', apiUserRoutes);
+app.use('/api', apiProductRoutes);
 
 
 // app.use(userLoggedMiddleware);
